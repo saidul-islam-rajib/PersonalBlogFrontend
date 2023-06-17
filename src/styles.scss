@@ -326,6 +326,7 @@ body.nav-active { overflow: hidden; }
 
 
 
+
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
@@ -809,6 +810,34 @@ body.nav-active { overflow: hidden; }
 }
 
 .popular-card .warpper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 10px;
+  font-size: var(--fontSize-6);
+  color: var(--text-slate-gray);
+  margin-block: 12px 20px;
+}
+
+// stylings for EXPERIENCE
+.experience-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-block-start: 20px;
+}
+
+.experience-card .card-banner {
+  width: 54px;
+  flex-shrink: 0;
+  border-radius: var(--radius-circle);
+}
+
+.experience-list > li:not(:last-child) .card-content {
+  border-block-end: 1px solid var(--border-prussian-blue);
+}
+
+.experience-card .warpper {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
