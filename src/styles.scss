@@ -102,7 +102,7 @@
    */
 
   --section-padding: 70px;
-  --section-padding-2: 5px;
+  --section-padding-2: 10px;
 
   /**
    * TRANSITION
@@ -302,7 +302,7 @@ body.nav-active { overflow: hidden; }
   object-fit: cover;
 }
 
-.section { padding-block: var(--section-padding); }
+.section { padding-top: var(--section-padding); }
 .section-2 { padding-block: var(--section-padding-2); }
 
 .section-text {
@@ -1336,6 +1336,17 @@ body.nav-active { overflow: hidden; }
   .topic-card {
     display: grid;
     grid-template-columns: 0.3fr 1fr;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /** 
+   * CUSTOM TOPICS CARD
+   */
+
+  .topic-card {
+    display: grid;
+    grid-template-columns: 0.6fr 0.6fr;
     align-items: center;
     gap: 20px;
   }
