@@ -7,6 +7,7 @@ import { FeaturedPostComponent } from './pages/featured-post/featured-post.compo
 import { TopicsComponent } from './pages/topics/topics.component';
 import { RecentPostComponent } from './pages/recent-post/recent-post.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 const routes: Routes = [
   { path:'', component: DashboardComponent},
@@ -15,6 +16,8 @@ const routes: Routes = [
   { path:'recent', component: FeaturedPostComponent},
   { path:'projects', component: ProjectsComponent},
   { path:'about', component: AboutComponent},
+
+  { path:'admin/login/rajib', component: AdminLoginComponent},
 ];
 
 @NgModule({

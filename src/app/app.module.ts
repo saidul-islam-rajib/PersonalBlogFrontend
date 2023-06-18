@@ -13,6 +13,7 @@ import { PopularTagsComponent } from './pages/popular-tags/popular-tags.componen
 import { RecentPostComponent } from './pages/recent-post/recent-post.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     RecentPostComponent,
     FooterComponent,
     DashboardComponent,
+    AdminLoginComponent,
     
   ],
   imports: [
