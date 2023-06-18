@@ -8,7 +8,7 @@ import { PagesComponent } from './pages/pages.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { AboutComponent } from './pages/about/about.component';
 import { TopicsComponent } from './pages/topics/topics.component';
-import { FeaturedPostComponent } from './pages/featured-post/featured-post.component';
+import { FeaturedPostComponent } from './pages/recent-post/featured-post.component';
 import { PopularTagsComponent } from './pages/popular-tags/popular-tags.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
