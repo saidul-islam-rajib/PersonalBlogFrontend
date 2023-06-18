@@ -9,7 +9,7 @@ import { RecentPostComponent } from './pages/recent-post/recent-post.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path:'', component: PagesComponent},
+  { path:'', component: DashboardComponent},
   { path:'home', component: DashboardComponent},
   { path:'topics', component: TopicsComponent},
   { path:'featured', component: FeaturedPostComponent},
