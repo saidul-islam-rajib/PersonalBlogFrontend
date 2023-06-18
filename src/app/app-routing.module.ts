@@ -12,8 +12,7 @@ const routes: Routes = [
   { path:'', component: DashboardComponent},
   { path:'home', component: DashboardComponent},
   { path:'topics', component: TopicsComponent},
-  { path:'featured', component: FeaturedPostComponent},
-  { path:'recent', component: RecentPostComponent},
+  { path:'recent', component: FeaturedPostComponent},
   { path:'projects', component: ProjectsComponent},
   { path:'about', component: AboutComponent},
 ];
