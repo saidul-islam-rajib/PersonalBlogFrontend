@@ -302,7 +302,8 @@ body.nav-active { overflow: hidden; }
   object-fit: cover;
 }
 
-.section { padding-block: var(--section-padding-2); }
+.section { padding-block: var(--section-padding); }
+.section-2 { padding-block: var(--section-padding-2); }
 
 .section-text {
   font-size: var(--fontSize-4);
