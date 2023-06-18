@@ -103,6 +103,7 @@
 
   --section-padding: 70px;
   --section-padding-2: 10px;
+  --section-padding-3: 30px;
 
   /**
    * TRANSITION
@@ -304,6 +305,7 @@ body.nav-active { overflow: hidden; }
 
 .section { padding-top: var(--section-padding); }
 .section-2 { padding-block: var(--section-padding-2); }
+.section-3 { padding-top: var(--section-padding-3); }
 
 .section-text {
   font-size: var(--fontSize-4);
