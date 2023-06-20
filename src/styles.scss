@@ -104,6 +104,7 @@
   --section-padding: 70px;
   --section-padding-2: 10px;
   --section-padding-3: 30px;
+  --hero-section-padding: 1px;
 
   /**
    * TRANSITION
@@ -458,7 +459,7 @@ body.nav-active { overflow: hidden; }
 
 .hero-bg { display: none; }
 
-.hero { padding-block-start: calc(var(--section-padding) + 160px); }
+.hero { padding-block-start: calc(var(--hero-section-padding) + 160px); }
 
 .hero .container {
   display: grid;
