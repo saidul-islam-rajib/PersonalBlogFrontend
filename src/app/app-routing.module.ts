@@ -8,14 +8,52 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { RecentPostComponent } from './pages/recent-post/recent-post.component';
 
 const routes: Routes = [
-  { path:'', component: DashboardComponent},
-  { path:'home', component: DashboardComponent},
-  { path:'topics', component: TopicsComponent},
-  { path:'recent', component: RecentPostComponent},
-  { path:'projects', component: ProjectsComponent},
-  { path:'about', component: AboutComponent},
 
-  { path:'admin/login/rajib', component: AdminLoginComponent},
+  {
+    path: 'home',
+    component: DashboardComponent,
+    data: {
+      title: 'Dashboard',
+      reuse: true,
+      pageType : 'view'
+    }
+  },
+  {
+    path: 'topics',
+    component: TopicsComponent,
+    data: {
+      title: 'Topics',
+      reuse: true,
+      pageType : 'view'
+    }
+  },
+  {
+    path: 'recent',
+    component: RecentPostComponent,
+    data: {
+      title: 'Recent-Post',
+      reuse: true,
+      pageType : 'view'
+    }
+  },
+  {
+    path: 'projects',
+    component: ProjectsComponent,
+    data: {
+      title: 'Projects',
+      reuse: true,
+      pageType : 'view'
+    }
+  },
+  {
+    path: 'about',
+    component: AboutComponent,
+    data: {
+      title: 'About',
+      reuse: true,
+      pageType : 'view'
+    }
+  },
 ];
 
 @NgModule({
