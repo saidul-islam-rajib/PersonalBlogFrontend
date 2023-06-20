@@ -4,14 +4,34 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { AboutComponent } from './pages/about/about.component';
 import { TopicsComponent } from './pages/topics/topics.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { RecentPostComponent } from './pages/recent-post/recent-post.component';
+import { PostComponent } from './pages/post/post.component';
+
+// {
+//   path : 'lookup-type/edit/:id',
+//   component: LookupTypeAddEditComponent,
+//   canActivate:[AfterAuthGlobalGuard],
+//   data: {
+//     title: 'Edit Lookup Type',
+//     reuse:false,
+//     pageType : 'edit'
+//   }
+// },
 
 const routes: Routes = [
 
   {
     path: 'home',
     component: DashboardComponent,
+    data: {
+      title: 'Dashboard',
+      reuse: true,
+      pageType : 'view'
+    }
+  },
+  {
+    path: 'home/posts/:id',
+    component: PostComponent,
     data: {
       title: 'Dashboard',
       reuse: true,
@@ -54,6 +74,7 @@ const routes: Routes = [
       pageType : 'view'
     }
   },
+  {path: '**', redirectTo: 'home'}
 ];
 
 @NgModule({
