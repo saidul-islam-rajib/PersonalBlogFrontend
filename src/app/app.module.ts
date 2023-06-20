@@ -13,6 +13,7 @@ import { FooterComponent } from './pages/footer/footer.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { RecentPostComponent } from './pages/recent-post/recent-post.component';
+import { PostComponent } from './pages/post/post.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { RecentPostComponent } from './pages/recent-post/recent-post.component';
     FooterComponent,
     DashboardComponent,
     AdminLoginComponent,
+    PostComponent,
     
   ],
   imports: [
