@@ -750,6 +750,8 @@ body.nav-active { overflow: hidden; }
 .pagination-btn:is(:hover, :focus-visible) {
   transform: translateY(-2px);
   background-color: var(--bg-carolina-blue);
+  cursor: pointer;
+  color: white;
 }
 
 .recent-post-card .card-title { margin-block: 1px 2px; }
