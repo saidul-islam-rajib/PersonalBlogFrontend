@@ -62,10 +62,40 @@
               </p>
             </div>
           </div>
+        </li>        
+      </ul>      
 
-        </li>
-        
-      </ul>
+      <div class="like-comment">
+        <ng-container *ngIf="!showInputField">
+          <div class="like-button" style="display: flex; justify-content: center; align-items: center;">
+            <i class="fa-sharp fa-solid fa-heart fa-2xl"></i>
+          </div>
+          <div class="comment-button">
+            <button class="btn btn-primary" (click)="replaceWithInput()">
+              <span class="span">Comment</span>
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </button>
+          </div>
+        </ng-container>
+      
+        <div class="another-div" style="width: 200%;">
+          <form *ngIf="showInputField" [formGroup]="inputControl">
+            <div >
+              <div class="input-wrapper">
+                <input type="text" name="comment" placeholder="Comments" class="input-field full-width" autocomplete="off">
+              </div><hr class="row-color">
+  
+              <a href="#" class="btn btn-primary">
+                <span class="span">Send</span>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      
+      
+
     </div>
 
     <div class="post-aside grid-list">
@@ -197,6 +227,7 @@
           </li>
 
         </ul>
+        
 
       </div>
 
@@ -280,8 +311,6 @@
         </ul>
 
       </div>
-
-      <app-feedback></app-feedback>
 
     </div>
 

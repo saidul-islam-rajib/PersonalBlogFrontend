@@ -720,6 +720,11 @@ body.nav-active { overflow: hidden; }
   gap: 30px;
 }
 
+.like-comment {
+  display: grid;
+  gap: 10px;
+}
+
 .recent-post-card .card-banner {
   border-radius: var(--radius-16);
   transition: var(--transition-1);
@@ -1521,4 +1526,12 @@ p{
 }
 .custom-header{
   text-transform: uppercase;
+}
+
+ /**
+  * Like Comment Section
+  */
+
+.like-comment {
+  grid-template-columns: 0.5fr 0.5fr;
 }

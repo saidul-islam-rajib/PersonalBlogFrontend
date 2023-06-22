@@ -15,6 +15,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { RecentPostComponent } from './pages/recent-post/recent-post.component';
 import { PostComponent } from './pages/post/post.component';
 import { FeedbackComponent } from './common/feedback/feedback.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { FeedbackComponent } from './common/feedback/feedback.component';
     BrowserModule,
     AppRoutingModule,
     IonicModule.forRoot(),
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
