@@ -63,7 +63,7 @@
             </div>
           </div>
         </li>        
-      </ul>      
+      </ul>
 
       <div class="like-comment">
         <ng-container *ngIf="!showInputField">
@@ -78,7 +78,7 @@
           </div>
         </ng-container>
       
-        <div class="another-div" style="width: 200%;">
+        <div class="another-div" style="width: 200%; margin-bottom: 20px;">
           <form *ngIf="showInputField" [formGroup]="inputControl">
             <div >
               <div class="input-wrapper">
@@ -92,6 +92,9 @@
           </form>
         </div>
       </div>
+
+      <app-feedback></app-feedback>
+
       
       
       
@@ -307,8 +310,5 @@
         </ul>
       </div>
     </div>
-
-    <app-feedback></app-feedback>
-
   </div>
 </section>
