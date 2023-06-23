@@ -712,7 +712,7 @@ body.nav-active { overflow: hidden; }
 
 .recent-post .container {
   display: grid;
-  gap: 50px;
+  gap: 30px;
 }
 
 .recent-post-card {
@@ -1523,6 +1523,11 @@ body.nav-active { overflow: hidden; }
 p{
   text-align: justify;
   font-size: 14px;
+}
+blockquote{
+  text-align: justify;
+  font-size: 13px;
+  color: rgba(243, 245, 232, 0.712);
 }
 .custom-header{
   text-transform: uppercase;
