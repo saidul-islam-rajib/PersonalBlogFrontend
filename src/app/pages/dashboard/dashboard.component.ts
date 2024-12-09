@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Post } from 'src/app/core/models/post-model';
-import { PostService } from 'src/app/core/services/post.service';
+import { Dashboard } from 'src/app/core/models/dashboard-model';
+import { DashboardService } from 'src/app/core/services/dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,11 +9,11 @@ import { PostService } from 'src/app/core/services/post.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-  data: Post[] = [];
+  data: Dashboard[] = [];
 
   constructor(
     private router: Router,
-    private postService: PostService
+    private dashboardService: DashboardService
   ) {}
 
   ngOnInit(): void {
@@ -21,7 +21,7 @@ export class DashboardComponent {
   }
 
   loadPosts(): void {
-    this.postService.getPosts().subscribe({
+    this.dashboardService.getPosts().subscribe({
       next: (posts) => {
         console.log("backend data : ", posts)
         this.data = posts;
@@ -33,7 +33,7 @@ export class DashboardComponent {
   }
 
   openPostTab(id: any){
-    this.router.navigate(['home/posts/sdff'])
+    this.router.navigate(['home/posts/'+id])
   }
 
 }

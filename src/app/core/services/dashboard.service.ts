@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Post } from '../models/post-model';
+import { Dashboard } from '../models/dashboard-model';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PostService {
+export class DashboardService {
   private apiUrl = `${environment.apiUrl}/Posts/get-all-posts`;
 
   constructor(private http: HttpClient) {}
 
-  getPosts(): Observable<Post[]> {
-    let response = this.http.get<Post[]>(this.apiUrl);
+  getPosts(): Observable<Dashboard[]> {
+    let response = this.http.get<Dashboard[]>(this.apiUrl);
     return response;
   }
 }

@@ -1,4 +1,4 @@
-<!-- 
+<!--
 - # POST DETAIL COMPONENT
 -->
 <section class="section recent-post" id="recent" aria-labelledby="recent-label">
@@ -62,7 +62,7 @@
               </p>
             </div>
           </div>
-        </li>        
+        </li>
       </ul>
 
       <div class="like-comment">
@@ -73,18 +73,18 @@
           <div class="comment-button">
             <button class="btn btn-primary" (click)="replaceWithInput()">
               <span class="span">Comment</span>
-              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+              <!-- <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon> -->
             </button>
           </div>
         </ng-container>
-      
+
         <div class="another-div" style="width: 200%; margin-bottom: 20px;">
           <form *ngIf="showInputField" [formGroup]="inputControl">
             <div >
               <div class="input-wrapper">
                 <input type="text" name="comment" placeholder="Comments" class="input-field full-width" autocomplete="off">
               </div><hr class="row-color">
-  
+
               <a href="#" class="btn btn-primary">
                 <span class="span">Send</span>
               </a>
@@ -95,9 +95,9 @@
 
       <app-feedback></app-feedback>
 
-      
-      
-      
+
+
+
 
     </div>
 

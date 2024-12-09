@@ -1,5 +1,5 @@
-export interface Post {
-  id: string;
+export interface Dashboard {
+  postId: string;
   postTitle: string;
   postAbstract: string;
   userId: string;
