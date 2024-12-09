@@ -9,17 +9,6 @@ import { PostService } from 'src/app/core/services/post.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-  // data: Post[] = [
-  //   {
-  //     id: '219EF7EA-CB85-4BD6-A587-61BCA135E022',
-  //     postTitle: 'Post 1',
-  //     postAbstract: 'This is the abstract of post 1.',
-  //     userId: '219EF7EA-CB85-4BD6-A587-61BCA135E022',
-  //     createdDateTime: new Date(),
-  //     updatedDateTime: new Date().toISOString()
-  //   }
-  // ];
-
   data: Post[] = [];
 
   constructor(
