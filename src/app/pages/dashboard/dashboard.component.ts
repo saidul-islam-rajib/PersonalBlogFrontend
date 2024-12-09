@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Dashboard } from 'src/app/core/models/dashboard-model';
+import { Dashboard } from 'src/app/core/interfaces/dashboard';
 import { DashboardService } from 'src/app/core/services/dashboard.service';
 
 @Component({

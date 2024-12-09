@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Dashboard } from '../models/dashboard-model';
+import { Dashboard } from '../interfaces/dashboard';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
