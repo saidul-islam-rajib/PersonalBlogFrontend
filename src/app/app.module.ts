@@ -16,6 +16,7 @@ import { RecentPostComponent } from './pages/recent-post/recent-post.component';
 import { PostComponent } from './pages/post/post.component';
 import { FeedbackComponent } from './common/feedback/feedback.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,13 +32,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     AdminLoginComponent,
     PostComponent,
     FeedbackComponent,
-    
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     IonicModule.forRoot(),
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

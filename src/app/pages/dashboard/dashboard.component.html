@@ -5,7 +5,7 @@
   <div class="container">
     <div class="post-main">
       <ul class="grid-list">
-        <li>
+        <li *ngFor="let post of data;">
           <div class="recent-post-card">
             <figure class="card-banner img-holder" style="--width: 250; --height: 200;">
               <img src="./assets/images/recent-post-1.jpg" width="250" height="200" loading="lazy"
@@ -14,14 +14,11 @@
 
             <div class="card-content">
               <h3 class="headline headline-4 card-title">
-                <a href="#" class="link hover-2">Helpful Tips for Working from Home as a Freelancer</a>
+                <a href="#" class="link hover-2">{{ post.postTitle }}</a>
               </h3>
-              <p class="post-date">June 17, 2023</p>
+              <p class="post-date">{{post.createdDateTime | date: 'MMMM d, yyyy'}}</p>
 
-              <p class="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, nostrum quas culpa voluptatum dicta
-                voluptate atque cum doloremque perferendis ipsam?
-              </p>
+              <p class="card-text">{{ post.postAbstract }}</p>
 
               <div class="wrapper">
                 <a class="connectionLink" (click)="openPostTab(101)" class="card-badge">Read More</a>
@@ -34,7 +31,6 @@
                 </div>
 
                 <div class="wrapper">
-                  <!-- <ion-icon name="time-outline" aria-hidden="true"></ion-icon> -->
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
                     <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
                     <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
