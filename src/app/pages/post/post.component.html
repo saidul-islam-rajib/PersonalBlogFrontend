@@ -60,6 +60,11 @@
             </div>
           </div>
         </li>
+
+        <div>
+          <h2 class="headline custom-header">Conclusion</h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto natus cumque delectus, eius earum porro nulla exercitationem voluptates est dolor?</p>
+        </div>
       </ul>
 
       <div class="like-comment">
@@ -73,7 +78,6 @@
           <div class="comment-button">
             <button class="btn btn-primary" (click)="replaceWithInput()">
               <span class="span">Comment</span>
-              <!-- <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon> -->
             </button>
           </div>
         </ng-container>
@@ -81,6 +85,17 @@
         <div class="another-div" style="width: 200%; margin-bottom: 20px">
           <form *ngIf="showInputField" [formGroup]="inputControl">
             <div>
+              <div class="input-wrapper">
+                <input
+                  type="text"
+                  name="commentorName"
+                  placeholder="Name"
+                  class="input-field full-width"
+                  autocomplete="off"
+                />
+              </div>
+              <hr class="row-color" />
+
               <div class="input-wrapper">
                 <input
                   type="text"
