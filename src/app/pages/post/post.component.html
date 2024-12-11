@@ -4,21 +4,21 @@
 <section class="section recent-post" id="recent" aria-labelledby="recent-label">
   <div class="container">
     <div class="post-main">
-      <ul class="grid-list">
+      <ul class="grid-list" *ngIf="post">
         <div class="common-title">
           <h1 class="headline card-title">
-            <a href="#" class="link hover-2 custom-header"
-              >Helpful Tips for Working from Home as a Freelancer</a
-            >
+            {{ post.postTitle }}
           </h1>
-          <p class="post-date">June 17, 2023</p>
+          <p class="post-date">
+            {{ post.createdDateTime | date : "MMMM d, yyyy" }}
+          </p>
           <hr class="row-color" />
         </div>
 
-        <li>
+        <li *ngFor="let section of post.sections">
           <div class="left-side">
-            <h2 class="headline custom-header">Introduction</h2>
-            <p>This is all about introduction part</p>
+            <h2 class="headline custom-header">{{ section.sectionTitle }}</h2>
+            <p>{{ section.sectionDescription }}</p>
           </div>
 
           <div class="post-detail-card">
@@ -36,51 +36,27 @@
               />
             </figure>
 
-            <div class="card-content custom-title">
-              <h4 class="headline custom-header">
-                The name of our country is bangladesh. bangladesh is a small
-                country.
-              </h4>
+            <div
+              class="card-content custom-title"
+              *ngFor="let item of section.items"
+            >
+              <h4 class="headline custom-header">{{ item.itemTitle }}</h4>
               <p class="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Assumenda, nostrum quas culpa voluptatum dicta voluptate atque
-                cum doloremque perferendis ipsam? Lorem ipsum dolor, sit amet
-                consectetur adipisicing elit. Odit aperiam iure sit perferendis
-                eaque, voluptates beatae? Iste, mollitia tenetur quasi voluptas
-                praesentium eius amet obcaecati porro reiciendis consequatur
-                rerum dolorem quis delectus quibusdam itaque hic facilis non
-                temporibus accusantium! Voluptatum iusto nemo molestiae,
-                expedita vel cupiditate atque sequi! Facilis ad cum suscipit
-                distinctio molestiae dolorum consequuntur quod. Delectus aut
-                ipsam saepe ab in repellat veniam incidunt doloribus, dolor
-                nisi, harum soluta accusamus porro sequi officia voluptatem
-                earum maxime dolores. Dolorum debitis distinctio temporibus aut,
-                in incidunt eveniet doloribus eum itaque. Autem nesciunt
-                consequuntur cupiditate dolorem distinctio ut facilis repellat
-                sapiente.
+                {{ item.itemDescription }}
               </p>
-              <h4 class="headline custom-header">
-                The name of our country is bangladesh. bangladesh is a small
-                country.
-              </h4>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Assumenda, nostrum quas culpa voluptatum dicta voluptate atque
-                cum doloremque perferendis ipsam? Lorem ipsum dolor, sit amet
-                consectetur adipisicing elit. Odit aperiam iure sit perferendis
-                eaque, voluptates beatae? Iste, mollitia tenetur quasi voluptas
-                praesentium eius amet obcaecati porro reiciendis consequatur
-                rerum dolorem quis delectus quibusdam itaque hic facilis non
-                temporibus accusantium! Voluptatum iusto nemo molestiae,
-                expedita vel cupiditate atque sequi! Facilis ad cum suscipit
-                distinctio molestiae dolorum consequuntur quod. Delectus aut
-                ipsam saepe ab in repellat veniam incidunt doloribus, dolor
-                nisi, harum soluta accusamus porro sequi officia voluptatem
-                earum maxime dolores. Dolorum debitis distinctio temporibus aut,
-                in incidunt eveniet doloribus eum itaque. Autem nesciunt
-                consequuntur cupiditate dolorem distinctio ut facilis repellat
-                sapiente.
-              </p>
+              <figure
+                class="card-banner img-holder mb-2"
+                style="--width: 250; --height: 200"
+              >
+                <img
+                  src="./assets/images/recent-post-1.jpg"
+                  width="250"
+                  height="150"
+                  loading="lazy"
+                  alt="Helpful Tips for Working from Home as a Freelancer"
+                  class="img-cover"
+                />
+              </figure>
             </div>
           </div>
         </li>
