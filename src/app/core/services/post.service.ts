@@ -13,7 +13,7 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   getPostById(postId: string): Observable<Post> {
-    const data_url = `${this.postUrl}/${postId}/test`;
+    const data_url = `${this.postUrl}/${postId}`;
     let response = this.http.get<Post>(data_url);
     return response;
   }
