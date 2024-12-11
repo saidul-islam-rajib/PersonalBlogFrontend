@@ -6,6 +6,7 @@ import { TopicsComponent } from './pages/topics/topics.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RecentPostComponent } from './pages/recent-post/recent-post.component';
 import { PostComponent } from './pages/post/post.component';
+import { NotFoundComponent } from './common/not-found/not-found.component';
 
 // {
 //   path : 'lookup-type/edit/:id',
@@ -19,15 +20,14 @@ import { PostComponent } from './pages/post/post.component';
 // },
 
 const routes: Routes = [
-
   {
     path: 'home',
     component: DashboardComponent,
     data: {
       title: 'Dashboard',
       reuse: true,
-      pageType : 'view'
-    }
+      pageType: 'view',
+    },
   },
   {
     path: 'home/posts/:id',
@@ -35,8 +35,8 @@ const routes: Routes = [
     data: {
       title: 'Dashboard',
       reuse: true,
-      pageType : 'view'
-    }
+      pageType: 'view',
+    },
   },
   {
     path: 'topics',
@@ -44,8 +44,8 @@ const routes: Routes = [
     data: {
       title: 'Topics',
       reuse: true,
-      pageType : 'view'
-    }
+      pageType: 'view',
+    },
   },
   {
     path: 'recent',
@@ -53,8 +53,8 @@ const routes: Routes = [
     data: {
       title: 'Recent-Post',
       reuse: true,
-      pageType : 'view'
-    }
+      pageType: 'view',
+    },
   },
   {
     path: 'projects',
@@ -62,8 +62,8 @@ const routes: Routes = [
     data: {
       title: 'Projects',
       reuse: true,
-      pageType : 'view'
-    }
+      pageType: 'view',
+    },
   },
   {
     path: 'about',
@@ -71,14 +71,18 @@ const routes: Routes = [
     data: {
       title: 'About',
       reuse: true,
-      pageType : 'view'
-    }
+      pageType: 'view',
+    },
   },
-  {path: '**', redirectTo: 'home'}
+  {
+    path: 'not-found',
+    component: NotFoundComponent,
+  },
+  { path: '**', redirectTo: 'not-found' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

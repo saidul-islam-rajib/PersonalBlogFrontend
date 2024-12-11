@@ -17,6 +17,7 @@ import { PostComponent } from './pages/post/post.component';
 import { FeedbackComponent } from './common/feedback/feedback.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NotFoundComponent } from './common/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AdminLoginComponent,
     PostComponent,
     FeedbackComponent,
+    NotFoundComponent,
 
   ],
   imports: [

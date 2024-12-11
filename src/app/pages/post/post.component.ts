@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from 'src/app/core/interfaces/post';
 import { PostService } from 'src/app/core/services/post.service';
 
@@ -15,6 +15,7 @@ export class PostComponent implements OnInit {
   inputControl: any;
 
   constructor(
+    private router: Router,
     private postService: PostService,
     private activatedRoute: ActivatedRoute
   ) {}
@@ -28,6 +29,7 @@ export class PostComponent implements OnInit {
         },
         error: (err) => {
           console.log('Error: ', err);
+          this.router.navigate(['not-found']);
         },
       });
     }
