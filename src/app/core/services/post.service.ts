@@ -8,13 +8,12 @@ import { Post } from '../interfaces/post';
   providedIn: 'root'
 })
 export class PostService {
-  private postUrl = `${environment.apiUrl}/post/3F13F2DB-D444-4901-B973-5B273965E425`;
+  private postUrl = `${environment.apiUrl}/post`;
 
   constructor(private http: HttpClient) { }
-  getPostById(postId: string): Observable<Post> {
-    console.log("post id : ", postId);
 
-    const data_url = `${this.postUrl}`;
+  getPostById(postId: string): Observable<Post> {
+    const data_url = `${this.postUrl}/${postId}`;
     let response = this.http.get<Post>(data_url);
     return response;
   }

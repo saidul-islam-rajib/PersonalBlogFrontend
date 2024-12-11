@@ -23,11 +23,10 @@ export class DashboardComponent {
   loadPosts(): void {
     this.dashboardService.getPosts().subscribe({
       next: (posts) => {
-        console.log("backend data : ", posts)
         this.data = posts;
       },
       error: (err) => {
-        console.error('Error fetching posts:', err);
+        console.error('Error:', err);
       }
     });
   }

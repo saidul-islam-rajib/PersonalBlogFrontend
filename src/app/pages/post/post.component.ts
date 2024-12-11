@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { Post } from 'src/app/core/interfaces/post';
 import { PostService } from 'src/app/core/services/post.service';
 
@@ -13,21 +14,23 @@ export class PostComponent implements OnInit {
   showInputField = false;
   inputControl: any;
 
-  constructor(private postService: PostService) {}
+  constructor(
+    private postService: PostService,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    console.log('post id is called!');
-
-    const postId = '6759d45f-f404-800d-b38e-330d8cd0eab0';
-    this.postService.getPostById(postId).subscribe({
-      next: (data) => {
-        this.post = data;
-        console.log('POST DATA:', this.post);
-      },
-      error: (err) => {
-        console.log('ERROR IN FETCHING POST DATA : ', err);
-      },
-    });
+    const postId = this.activatedRoute.snapshot.paramMap.get('id');
+    if(postId){
+      this.postService.getPostById(postId).subscribe({
+        next: (data) => {
+          this.post = data;
+        },
+        error: (err) => {
+          console.log('Error: ', err);
+        },
+      });
+    }
 
     this.inputControl = new FormControl('');
   }
