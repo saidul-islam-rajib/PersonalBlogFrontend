@@ -59,16 +59,13 @@
               </figure>
             </div>
           </div>
+          <div *ngIf="post.conclusion">
+            <h4 class="headline custom-header">Conclusion</h4>
+            <p>
+              {{ post.conclusion }}
+            </p>
+          </div>
         </li>
-
-        <div>
-          <h4 class="headline custom-header">Conclusion</h4>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto
-            natus cumque delectus, eius earum porro nulla exercitationem
-            voluptates est dolor?
-          </p>
-        </div>
       </ul>
 
       <div class="like-comment">
