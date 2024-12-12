@@ -9,12 +9,21 @@ import { Post } from '../interfaces/post';
 })
 export class PostService {
   private postUrl = `${environment.apiUrl}/post`;
+  private postId: string | null = null;
 
   constructor(private http: HttpClient) { }
+
+  setPostId(id: string): void{
+    this.postId = id;
+  }
 
   getPostById(postId: string): Observable<Post> {
     const data_url = `${this.postUrl}/${postId}`;
     let response = this.http.get<Post>(data_url);
     return response;
+  }
+
+  getPostId(): string | null{
+    return this.postId;
   }
 }

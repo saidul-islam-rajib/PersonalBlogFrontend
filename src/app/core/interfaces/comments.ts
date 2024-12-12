@@ -1,8 +1,8 @@
-export interface Comment {
+export interface CommentInterface {
   id: string;
   postTitle: string;
   name: string;
   comments: string;
   date: Date;
-  postId: string
+  postId: string;
 }
