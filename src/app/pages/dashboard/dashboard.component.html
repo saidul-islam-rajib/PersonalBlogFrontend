@@ -23,7 +23,7 @@
 
             <div class="card-content">
               <h3 class="headline headline-4 card-title">
-                <a href="#" class="link hover-2">{{ post.postTitle }}</a>
+                <a href="javascript:void(0)" (click)="openPostTab(post.postId)" class="link hover-2">{{ post.postTitle }}</a>
               </h3>
               <p class="post-date">
                 {{ post.createdDateTime | date : "MMMM d, yyyy" }}
@@ -97,7 +97,7 @@
         </h3>
 
         <ul class="popular-list">
-          <li>
+          <li *ngFor="let post of data">
             <div class="popular-card">
               <figure
                 class="card-banner img-holder"
@@ -115,153 +115,15 @@
 
               <div class="card-content">
                 <h4 class="headline headline-4 card-title">
-                  <a href="#" class="link hover-2"
-                    >Creating is a privilege but it’s also a gift</a
-                  >
+                  <a href="#" class="link hover-2">{{ post.postTitle }}</a>
                 </h4>
 
                 <div class="warpper">
                   <p class="card-subtitle">15 mins read</p>
 
-                  <time class="publish-date" datetime="2022-04-15"
-                    >15 April 2022</time
-                  >
-                </div>
-              </div>
-            </div>
-          </li>
-
-          <li>
-            <div class="popular-card">
-              <figure
-                class="card-banner img-holder"
-                style="--width: 64; --height: 64"
-              >
-                <img
-                  src="./assets/images/popular-post-2.jpg"
-                  width="64"
-                  height="64"
-                  loading="lazy"
-                  alt="Being unique is better than being perfect"
-                  class="img-cover"
-                />
-              </figure>
-
-              <div class="card-content">
-                <h4 class="headline headline-4 card-title">
-                  <a href="#" class="link hover-2"
-                    >Being unique is better than being perfect</a
-                  >
-                </h4>
-
-                <div class="warpper">
-                  <p class="card-subtitle">15 mins read</p>
-
-                  <time class="publish-date" datetime="2022-04-15"
-                    >15 April 2022</time
-                  >
-                </div>
-              </div>
-            </div>
-          </li>
-
-          <li>
-            <div class="popular-card">
-              <figure
-                class="card-banner img-holder"
-                style="--width: 64; --height: 64"
-              >
-                <img
-                  src="./assets/images/popular-post-3.jpg"
-                  width="64"
-                  height="64"
-                  loading="lazy"
-                  alt="Every day, in every city and town across the country"
-                  class="img-cover"
-                />
-              </figure>
-
-              <div class="card-content">
-                <h4 class="headline headline-4 card-title">
-                  <a href="#" class="link hover-2"
-                    >Every day, in every city and town across the country</a
-                  >
-                </h4>
-
-                <div class="warpper">
-                  <p class="card-subtitle">15 mins read</p>
-
-                  <time class="publish-date" datetime="2022-04-15"
-                    >15 April 2022</time
-                  >
-                </div>
-              </div>
-            </div>
-          </li>
-
-          <li>
-            <div class="popular-card">
-              <figure
-                class="card-banner img-holder"
-                style="--width: 64; --height: 64"
-              >
-                <img
-                  src="./assets/images/popular-post-4.jpg"
-                  width="64"
-                  height="64"
-                  loading="lazy"
-                  alt="Your voice, your mind, your story, your vision"
-                  class="img-cover"
-                />
-              </figure>
-
-              <div class="card-content">
-                <h4 class="headline headline-4 card-title">
-                  <a href="#" class="link hover-2"
-                    >Your voice, your mind, your story, your vision</a
-                  >
-                </h4>
-
-                <div class="warpper">
-                  <p class="card-subtitle">15 mins read</p>
-
-                  <time class="publish-date" datetime="2022-04-15"
-                    >15 April 2022</time
-                  >
-                </div>
-              </div>
-            </div>
-          </li>
-
-          <li>
-            <div class="popular-card">
-              <figure
-                class="card-banner img-holder"
-                style="--width: 64; --height: 64"
-              >
-                <img
-                  src="./assets/images/popular-post-2.jpg"
-                  width="64"
-                  height="64"
-                  loading="lazy"
-                  alt="Being unique is better than being perfect"
-                  class="img-cover"
-                />
-              </figure>
-
-              <div class="card-content">
-                <h4 class="headline headline-4 card-title">
-                  <a href="#" class="link hover-2"
-                    >Being unique is better than being perfect</a
-                  >
-                </h4>
-
-                <div class="warpper">
-                  <p class="card-subtitle">15 mins read</p>
-
-                  <time class="publish-date" datetime="2022-04-15"
-                    >15 April 2022</time
-                  >
+                  <time class="publish-date" datetime="2022-04-15">{{
+                    post.createdDateTime | date : "MMMM d yyyy"
+                  }}</time>
                 </div>
               </div>
             </div>
