@@ -8,12 +8,12 @@ import { CommentInterface } from '../interfaces/comments';
   providedIn: 'root',
 })
 export class CommentService {
-  private commentUrl = `${environment.apiUrl}/comment/get-comments-by-post-id?postId=3F13F2DB-D444-4901-B973-5B273965E425`;
+  private commentUrl = `${environment.apiUrl}/comment/get-comments-by-post-id`;
 
   constructor(private http: HttpClient) {}
 
   getCommentByPostId(postId: string): Observable<CommentInterface[]> {
-    const data_url = `${this.commentUrl}`;
+    const data_url = `${this.commentUrl}?postId=${postId}`;
     let response = this.http.get<CommentInterface[]>(data_url);
     return response;
   }

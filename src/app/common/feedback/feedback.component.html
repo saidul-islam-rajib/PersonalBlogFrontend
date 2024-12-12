@@ -5,8 +5,8 @@
 
   <ul class="comment-list">
     <blockquote>“We appreciate your feedback...“</blockquote>
-    <li *ngFor="let comment of comment_list">
-      <div class="comment-card">
+    <li *ngIf="comment_list && comment_list.length > 0;">
+      <div class="comment-card" *ngFor="let comment of comment_list">
         <div class="profile-card">
           <figure class="profile-banner img-holder">
             <img
