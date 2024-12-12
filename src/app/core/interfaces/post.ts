@@ -2,6 +2,8 @@ export interface Post {
   postId: string;
   postTitle: string;
   postAbstract: string;
+  conclusion: string;
+  readingMinute: number;
   sections: PostSection[];
   topicIds: PostTopic[];
   userId: string;
