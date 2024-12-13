@@ -1,4 +1,4 @@
-export interface CommentInterface {
+export interface FeedbackInterface {
   id: string;
   postTitle: string;
   name: string;

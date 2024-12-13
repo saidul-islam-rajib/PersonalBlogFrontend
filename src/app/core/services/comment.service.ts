@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { CommentInterface } from '../interfaces/comments';
+import { FeedbackInterface } from '../interfaces/feedback';
 
 @Injectable({
   providedIn: 'root',
@@ -12,9 +12,9 @@ export class CommentService {
 
   constructor(private http: HttpClient) {}
 
-  getCommentByPostId(postId: string): Observable<CommentInterface[]> {
+  getCommentByPostId(postId: string): Observable<FeedbackInterface[]> {
     const data_url = `${this.commentUrl}?postId=${postId}`;
-    let response = this.http.get<CommentInterface[]>(data_url);
+    let response = this.http.get<FeedbackInterface[]>(data_url);
     return response;
   }
 }
