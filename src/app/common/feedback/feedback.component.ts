@@ -13,11 +13,9 @@ export class FeedbackComponent implements OnInit {
   constructor(private commentService: CommentService) {}
 
   ngOnInit(): void {
-    console.log('post id : ', this.postId);
     this.commentService.getCommentByPostId(this.postId).subscribe({
       next: (response) => {
         this.comment_list = response;
-        console.log('Comment data : ', this.comment_list);
       },
       error: (err) => {
         console.log('Error: ', err);

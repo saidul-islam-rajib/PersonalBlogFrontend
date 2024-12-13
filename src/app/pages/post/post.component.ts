@@ -29,8 +29,6 @@ export class PostComponent implements OnInit {
     const postId = this.activatedRoute.snapshot.paramMap.get('id');
     if(postId){
       this.postId = postId;
-      // fetch post data
-      // this.postService.setPostId(postId);
 
       this.postService.getPostById(postId).subscribe({
         next: (data) => {
@@ -41,18 +39,6 @@ export class PostComponent implements OnInit {
           this.router.navigate(['not-found']);
         }
       });
-
-      // fetch comment data
-      // this.commentService.getCommentByPostId(postId).subscribe({
-      //   next: (response) => {
-      //     console.log("Comment data : ", response)
-      //     this.comment = response;
-      //   },
-      //   error: (err) => {
-      //     console.log('Error: ', err);
-      //     this.router.navigate(['not-found']);
-      //   }
-      // });
     }
 
     this.inputControl = new FormControl('');

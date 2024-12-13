@@ -68,40 +68,7 @@
         </li>
       </ul>
 
-      <div class="like-comment">
-        <div class="another-div" style="width: 200%; margin-bottom: 20px">
-          <form [formGroup]="inputControl">
-            <div>
-              <div class="input-wrapper">
-                <input
-                  type="text"
-                  name="commentorName"
-                  placeholder="Your Name"
-                  class="input-field full-width"
-                  autocomplete="off"
-                />
-              </div>
-              <hr class="row-color" />
-
-              <div class="input-wrapper">
-                <input
-                  type="text"
-                  name="comment"
-                  placeholder="Comments"
-                  class="input-field full-width"
-                  autocomplete="off"
-                />
-              </div>
-              <hr class="row-color" />
-
-              <a href="#" class="btn btn-primary">
-                <span class="span">Comment</span>
-              </a>
-            </div>
-          </form>
-        </div>
-      </div>
-
+      <app-comment-section></app-comment-section>
       <app-feedback [postId]="postId"></app-feedback>
     </div>
 
