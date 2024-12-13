@@ -18,6 +18,7 @@ import { FeedbackComponent } from './common/feedback/feedback.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './common/not-found/not-found.component';
+import { CommentSectionComponent } from './pages/sharedComponent/comment-section/comment-section.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { NotFoundComponent } from './common/not-found/not-found.component';
     PostComponent,
     FeedbackComponent,
     NotFoundComponent,
+    CommentSectionComponent,
 
   ],
   imports: [

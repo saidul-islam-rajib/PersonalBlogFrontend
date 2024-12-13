@@ -21,13 +21,11 @@ export class PostComponent implements OnInit {
     private router: Router,
     private postService: PostService,
     private activatedRoute: ActivatedRoute
-  ) {
-    console.log("post component")
-  }
+  ) {}
 
   ngOnInit() {
     const postId = this.activatedRoute.snapshot.paramMap.get('id');
-    if(postId){
+    if (postId) {
       this.postId = postId;
 
       this.postService.getPostById(postId).subscribe({
@@ -37,7 +35,7 @@ export class PostComponent implements OnInit {
         error: (err) => {
           console.log('Error: ', err);
           this.router.navigate(['not-found']);
-        }
+        },
       });
     }
 

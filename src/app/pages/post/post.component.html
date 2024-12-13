@@ -1,7 +1,7 @@
 <!--
 - # POST DETAIL COMPONENT
 -->
-<section class="section " id="recent" aria-labelledby="recent-label">
+<section class="section" id="recent" aria-labelledby="recent-label">
   <div class="container">
     <div class="post-main">
       <ul class="grid-list" *ngIf="post">
@@ -68,9 +68,8 @@
         </li>
       </ul>
 
-      <app-comment-section></app-comment-section>
+      <app-comment-section [postId]="postId"></app-comment-section>
       <app-feedback [postId]="postId"></app-feedback>
     </div>
-
   </div>
 </section>
