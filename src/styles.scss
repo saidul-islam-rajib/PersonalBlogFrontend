@@ -335,12 +335,28 @@ body.nav-active {
   align-items: center;
   font-size: var(--fontSize-6);
   margin-block: 20px;
+  font-size: 10px;
+  color: wheat;
 }
 
 .card-wrapper :is(.card-tag, .wrapper) {
   display: flex;
   gap: 3px;
   align-items: center;
+}
+
+.card-tag {
+  flex-wrap: wrap;
+}
+
+.card-tag a {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.wrapper {
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /*-----------------------------------*\
