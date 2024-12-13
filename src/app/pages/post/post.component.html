@@ -69,28 +69,14 @@
       </ul>
 
       <div class="like-comment">
-        <ng-container *ngIf="!showInputField">
-          <div
-            class="like-button"
-            style="display: flex; justify-content: center; align-items: center"
-          >
-            <i class="fa-sharp fa-solid fa-heart fa-2xl"></i>
-          </div>
-          <div class="comment-button">
-            <button class="btn btn-primary" (click)="replaceWithInput()">
-              <span class="span">Comment</span>
-            </button>
-          </div>
-        </ng-container>
-
         <div class="another-div" style="width: 200%; margin-bottom: 20px">
-          <form *ngIf="showInputField" [formGroup]="inputControl">
+          <form [formGroup]="inputControl">
             <div>
               <div class="input-wrapper">
                 <input
                   type="text"
                   name="commentorName"
-                  placeholder="Name"
+                  placeholder="Your Name"
                   class="input-field full-width"
                   autocomplete="off"
                 />
@@ -109,7 +95,7 @@
               <hr class="row-color" />
 
               <a href="#" class="btn btn-primary">
-                <span class="span">Send</span>
+                <span class="span">Comment</span>
               </a>
             </div>
           </form>
