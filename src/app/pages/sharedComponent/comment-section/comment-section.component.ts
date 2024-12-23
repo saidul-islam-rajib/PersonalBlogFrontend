@@ -32,6 +32,7 @@ export class CommentSectionComponent {
       this.http.post(postCommentApiUrl, payload).subscribe(
         () => {
           alert('Comment posted successfully');
+          location.reload();
         },
         (error) => {
           console.error('Error details:', error.error.errors);
