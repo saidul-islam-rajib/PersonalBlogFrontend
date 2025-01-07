@@ -23,6 +23,7 @@ export class AboutComponent implements OnInit {
   loadExperiences(): void {
     this.experienceService.getExperiences().subscribe({
       next:(data) => {
+        console.log("Experience data : ", data);
         this.experiences = data;
       }
     })

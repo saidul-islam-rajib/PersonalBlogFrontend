@@ -8,4 +8,10 @@ export interface Experience{
   startDate: Date;
   endDate: Date;
   userId: string;
+  experienceSection: ExperienceSection[];
+}
+
+export interface ExperienceSection{
+  experienceSectionId: string;
+  sectionDescription: string;
 }

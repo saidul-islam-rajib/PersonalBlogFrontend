@@ -135,11 +135,11 @@
                     }}
                   </p>
                 </div>
-                <div class="card-grid-contianer">
+                <div class="card-grid-contianer"  >
                   <h4 class="data-list card-title">Role & Responsibilities</h4>
-                  <ul>
+                  <ul *ngFor="let section of data.experienceSection">
                     <li style="font-size: 12px">
-                      * Data Structure & Algorithms
+                      <b>-</b> {{ section.sectionDescription }}
                     </li>
                   </ul>
                 </div>
