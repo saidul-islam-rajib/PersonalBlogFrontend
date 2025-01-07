@@ -1,4 +1,4 @@
-<!-- 
+<!--
   - #ABOUT PAGE
 -->
 <section class="hero" id="about" aria-label="about">
@@ -23,7 +23,7 @@
           autocomplete="off">
         <button class="btn btn-primary">
           <span class="span">Follow</span>
-          <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+          <!-- <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon> -->
         </button>
       </div>
     </div>
@@ -47,7 +47,7 @@
         <h3 class="headline headline-2 aside-title">
           <span class="span">Experiences</span>
         </h3>
-        <ul class="experience-list">
+        <ul class="experience-list" *ngFor="let data of experiences" >
           <li>
             <div class="experience-card">
               <figure class="card-banner img-holder" style="--width: 64; --height: 64;">
@@ -58,86 +58,26 @@
               <div class="card-content">
                 <div class="company-content">
                   <h4 class="headline headline-4 card-title" style="width: 100%; margin-bottom: 0px;">
-                    <a href="#" class="link hover-2">ASA International Management Services Limited, Bangladesh</a>
+                    <a href="#" class="link hover-2">{{ data.companyName }} ({{ data.shortName }})</a>
                   </h4>
-                  <p class="experience-month">Full time, 9 Month's</p>
+                  <p class="experience-month">{{ data.isFullTimeEmployee ? "Full Time" : "" }}, {{ calculateDuration(data.startDate, data.endDate, data.isCurrentEmployee) }}</p>
                 </div>
 
                 <div class="warpper" style="margin-bottom: 5px;">
                   <h4 class="headline card-title" style="width: 100%; margin-bottom: 0px;">
-                    <a href="#" class="link hover-2">Junior Software Engineer</a>
+                    <a class="link hover-2">{{ data.designation }}</a>
                   </h4>
-                  <p class="experience-month">Jan 10, 2023 to Jan 10, 2025</p>
+                  <p class="experience-month">{{ data.startDate | date : "MMMM dd, yyyy" }} {{ data.isCurrentEmployee ? " to "+ (data.endDate | date: "MMMM dd, yyyy") : "to Present" }}</p>
                 </div>
-                <div class="card-grid-contianer">
-                  <p class="data-list">Skills: Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio alias
-                    perferendis
-                    nesciunt rerum dolorem, veritatis repellendus id nam dicta officiis.</p>
+                <div class="card-grid-contianer" >
+                  <h4 class="data-list card-title">Role & Responsibilities</h4>
+                  <ul>
+                    <li style="font-size: 12px;" >* Data Structure & Algorithms</li>
+                  </ul>
                 </div>
 
               </div>
 
-            </div>
-          </li>
-          <li>
-            <div class="experience-card">
-              <figure class="card-banner img-holder" style="--width: 64; --height: 64;">
-                <img src="./assets/images/popular-post-2.jpg" width="64" height="64" loading="lazy"
-                  alt="Being unique is better than being perfect" class="img-cover">
-              </figure>
-
-              <div class="card-content">
-                <div class="company-content">
-                  <h4 class="headline headline-4 card-title" style="width: 100%; margin-bottom: 0px;">
-                    <a href="#" class="link hover-2">ASA International Management Services Limited, Bangladesh</a>
-                  </h4>
-                  <p class="experience-month">Full time, 3 Month's</p>
-                </div>
-
-                <div class="warpper" style="margin-bottom: 5px;">
-                  <h4 class="headline card-title" style="width: 100%; margin-bottom: 0px;">
-                    <a href="#" class="link hover-2">Intern Software Engineer</a>
-                  </h4>
-                  <p class="experience-month">Oct 10, 2022 to Jan 10, 2023</p>
-                </div>
-                <div class="card-grid-contianer">
-                  <p class="data-list">Skills: Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio alias
-                    perferendis
-                    nesciunt rerum dolorem, veritatis repellendus id nam dicta officiis.</p>
-                </div>
-
-              </div>
-
-            </div>
-          </li>
-
-          <li>
-            <div class="experience-card">
-              <figure class="card-banner img-holder" style="--width: 64; --height: 64;">
-                <img src="./assets/images/popular-post-3.jpg" width="64" height="64" loading="lazy"
-                  alt="Every day, in every city and town across the country" class="img-cover">
-              </figure>
-
-              <div class="card-content">
-                <div class="company-content">
-                  <h4 class="headline headline-4 card-title" style="width: 100%; margin-bottom: 0px;">
-                    <a href="#" class="link hover-2">LIAO HE PTE LTD, Singapore</a>
-                  </h4>
-                  <p class="experience-month">Full time 1 Year, 1 Month's</p>
-                </div>
-
-                <div class="warpper" style="margin-bottom: 5px;">
-                  <h4 class="headline card-title" style="width: 100%; margin-bottom: 0px;">
-                    <a href="#" class="link hover-2">Construction Worker</a>
-                  </h4>
-                  <p class="experience-month">Mar 03, 2015 to Mar 12, 2016</p>
-                </div>
-                <div class="card-grid-contianer">
-                  <p class="data-list">Skills: Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio alias
-                    perferendis
-                    nesciunt rerum dolorem, veritatis repellendus id nam dicta officiis.</p>
-                </div>
-              </div>
             </div>
           </li>
         </ul>
