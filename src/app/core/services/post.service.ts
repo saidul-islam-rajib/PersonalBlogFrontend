@@ -26,4 +26,14 @@ export class PostService {
   getPostId(): string | null{
     return this.postId;
   }
+
+  getRecentPosts(): Observable<Post[]>{
+    const data_url = `${this.postUrl}/get-all-posts`;
+    let response = this.http.get<Post[]>(data_url);
+
+    console.log("post list : ", response);
+
+    return response;
+  }
+
 }
