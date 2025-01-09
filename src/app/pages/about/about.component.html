@@ -193,9 +193,9 @@
                 </div>
                 <div class="card-grid-contianer"  >
                   <h4 class="data-list card-title">Learning && Skills && Achievements</h4>
-                  <ul >
+                  <ul *ngFor="let section of education.educationSection" >
                     <li style="font-size: 12px">
-                      <b>-</b> first
+                      <b>-</b> {{ section.sectionDescription }}
                     </li>
                   </ul>
                 </div>
