@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Post } from 'src/app/core/interfaces/post';
 import { PostService } from 'src/app/core/services/post.service';
 import { UserService } from 'src/app/core/services/user.service';
@@ -13,6 +14,7 @@ export class RecentPostComponent {
   userNames: { [userId: string]: string } = {};
 
   constructor(
+    private router: Router,
     private postService: PostService,
     private userService: UserService
   ) {}
@@ -52,6 +54,9 @@ export class RecentPostComponent {
 
   getUserName(userId: string): string {
     return this.userNames[userId] || 'Loading...';
+  }
+  openPostTab(id: any){
+    this.router.navigate(['home/posts/'+id])
   }
 
 }
