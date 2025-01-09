@@ -114,14 +114,14 @@
 
               <div class="card-content">
                 <h4 class="headline headline-4 card-title">
-                  <a href="#" class="link hover-2">{{ post.postTitle }}</a>
+                  <a href="javascript:void(0)" (click)="openPostTab(post.postId)" class="link hover-2">{{ post.postTitle }}</a>
                 </h4>
 
                 <div class="warpper">
-                  <p class="card-subtitle">15 mins read</p>
+                  <p class="card-subtitle">{{post.readingMinute}} mins read</p>
 
                   <time class="publish-date" datetime="2022-04-15">{{
-                    post.createdDateTime | date : "MMMM d yyyy"
+                    post.createdDateTime | date : "MMM dd, yy"
                   }}</time>
                 </div>
               </div>
