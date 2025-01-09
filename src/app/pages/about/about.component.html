@@ -159,7 +159,7 @@
         <h3 class="headline headline-2 aside-title">
           <span class="span">Education</span>
         </h3>
-        <ul class="experience-list">
+        <ul class="experience-list" *ngFor="let education of educationList" >
           <li>
             <div class="experience-card">
               <figure
@@ -183,58 +183,21 @@
                     style="width: 100%; margin-bottom: 0px"
                   >
                     <a href="#" class="link hover-2"
-                      >Daffodil International University</a
+                      >{{ education.instituteName }}</a
                     >
                   </h4>
                   <label for=""
-                    >Bachelor in Computer Science and Engineering</label
+                    >{{ education.department }}</label
                   >
-                  <p class="experience-month">Jan 12, 2018 to Feb 20, 2022</p>
+                  <p class="experience-month">{{ education.startDate | date: "MMMM dd, yyyy" }} to {{ education.endDate | date: "MMMM dd, yyyy"}}</p>
                 </div>
-                <div class="card-grid-contianer">
-                  <p class="data-list">
-                    Skills: Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Distinctio alias perferendis nesciunt rerum dolorem,
-                    veritatis repellendus id nam dicta officiis.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="experience-card">
-              <figure
-                class="card-banner img-holder"
-                style="--width: 64; --height: 64"
-              >
-                <img
-                  src="./assets/images/popular-post-3.jpg"
-                  width="64"
-                  height="64"
-                  loading="lazy"
-                  alt="Every day, in every city and town across the country"
-                  class="img-cover"
-                />
-              </figure>
-
-              <div class="card-content">
-                <div class="company-content">
-                  <h4
-                    class="headline headline-4 card-title"
-                    style="width: 100%; margin-bottom: 0px"
-                  >
-                    <a href="#" class="link hover-2"
-                      >Hazi Asmat College, Bhairab</a
-                    >
-                  </h4>
-                  <label for="">Science</label>
-                  <p class="experience-month">Sep 10, 2013 to Jan 20, 2017</p>
-                </div>
-                <div class="card-grid-contianer">
-                  <p class="data-list">
-                    Skills: Lorem ipsum dolor sit, amet consectetur adipisicing
-                    elit. Facere, modi?
-                  </p>
+                <div class="card-grid-contianer"  >
+                  <h4 class="data-list card-title">Learning && Skills && Achievements</h4>
+                  <ul >
+                    <li style="font-size: 12px">
+                      <b>-</b> first
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>

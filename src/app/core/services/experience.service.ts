@@ -13,11 +13,7 @@ export class ExperienceService {
   constructor(private http: HttpClient) { }
 
   getExperiences(): Observable<Experience[]>{
-    console.log("loading method called!")
     let response = this.http.get<Experience[]>(this.apiUrl);
-
-    console.log("list of experience : ", response);
-
     return response;
   }
 }
