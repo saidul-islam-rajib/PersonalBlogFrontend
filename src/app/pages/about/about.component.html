@@ -213,7 +213,7 @@
         <h3 class="headline headline-2 aside-title">
           <span class="span">Publications</span>
         </h3>
-        <ul class="experience-list">
+        <ul class="experience-list" *ngFor="let publication of publicationList" >
           <li>
             <div class="experience-card">
               <figure
@@ -237,8 +237,7 @@
                     style="width: 100%; margin-bottom: 0px"
                   >
                     <a href="#" class="link hover-2"
-                      >The Method for Finding Eligible Employees Based on
-                      Specification</a
+                      >{{publication.title }}</a
                     >
                   </h4>
                 </div>
@@ -247,16 +246,13 @@
                     class="headline card-title"
                     style="width: 100%; margin-bottom: 0px"
                   >
-                    <p href="#" class="link hover-2">Journal Name</p>
+                    <p href="#" class="link hover-2">{{ publication.journalName }}</p>
                   </h5>
                 </div>
                 <div class="card-grid-contianer">
                   <p class="data-list">
-                    Short Description: Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Distinctio alias perferendis nesciunt
-                    rerum dolorem, veritatis repellendus id nam dicta officiis.
+                    {{ publication.summary }}
                   </p>
-                  <a class="source-link" href="#">click here</a>
                 </div>
               </div>
             </div>
