@@ -445,7 +445,7 @@
         <h3 class="headline headline-2 aside-title">
           <span class="span">Additional Skills && Hobbies</span>
         </h3>
-        <ul class="experience-list">
+        <ul class="experience-list" *ngFor="let skill of additionalSkillList" >
           <li>
             <div class="experience-card">
               <figure
@@ -468,17 +468,17 @@
                     style="width: 100%; margin-bottom: 0px"
                   >
                     <a href="#" class="link hover-2"
-                      >LIAO HE PTE LTD, Singapore</a
+                      >{{ skill.title }}</a
                     >
                   </h4>
                 </div>
+
                 <div class="card-grid-contianer">
-                  <p class="data-list">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Fugiat hic expedita nostrum reiciendis et adipisci? Minima
-                    atque assumenda, provident amet culpa quas eius possimus
-                    animi iusto officiis unde inventore error.
-                  </p>
+                  <ul *ngFor="let item of skill.keys">
+                    <li style="font-size: 12px">
+                      <b>-</b> {{ item.key }}
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
