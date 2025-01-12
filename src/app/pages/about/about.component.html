@@ -254,6 +254,15 @@
                     {{ publication.summary }}
                   </p>
                 </div>
+
+                <div class="card-grid-contianer"  >
+                  <h4 class="data-list card-title">Topic, Skill & Keys</h4>
+                  <ul *ngFor="let item of publication.keys">
+                    <li style="font-size: 12px">
+                      <b>-</b> {{ item.key }}
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </li>
