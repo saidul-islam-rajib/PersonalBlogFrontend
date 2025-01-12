@@ -240,6 +240,9 @@
                       >{{publication.title }}</a
                     >
                   </h4>
+                  <p>
+                    {{ publication.date | date: "MMMM dd, yyyy" }}
+                  </p>
                 </div>
                 <div class="warpper" style="margin-bottom: 5px">
                   <h5
