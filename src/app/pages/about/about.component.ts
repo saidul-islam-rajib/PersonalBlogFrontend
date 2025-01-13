@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { AdditionalSkill } from 'src/app/core/interfaces/additional-skill';
 import { Education } from 'src/app/core/interfaces/education';
 import { Experience } from 'src/app/core/interfaces/experience';
+import { Interest } from 'src/app/core/interfaces/interest';
 import { Publication } from 'src/app/core/interfaces/publication';
 import { AdditionalSkillService } from 'src/app/core/services/additional-skill.service';
 import { CalculateDurationService } from 'src/app/core/services/common/calculate-duration.service';
 import { EducationService } from 'src/app/core/services/education.service';
 import { ExperienceService } from 'src/app/core/services/experience.service';
+import { InterestService } from 'src/app/core/services/interest.service';
 import { PublicationService } from 'src/app/core/services/publication.service';
 
 @Component({
@@ -19,13 +21,15 @@ export class AboutComponent implements OnInit {
   educationList: Education[] = [];
   publicationList: Publication[] = [];
   additionalSkillList: AdditionalSkill[] = [];
+  interstList: Interest[] = [];
 
   constructor(
     private experienceService : ExperienceService,
     private durationService: CalculateDurationService,
     private educationService: EducationService,
     private publicationService: PublicationService,
-    private additionalSkillService: AdditionalSkillService
+    private additionalSkillService: AdditionalSkillService,
+    private interestService: InterestService
   ){}
 
   ngOnInit(): void{
@@ -33,6 +37,7 @@ export class AboutComponent implements OnInit {
     this.loadEducations();
     this.loadPublication();
     this.loadAdditionalSkill();
+    this.loadInterest();
   }
 
   loadExperiences(): void {
@@ -72,10 +77,21 @@ export class AboutComponent implements OnInit {
     this.additionalSkillService.getAdditionalSkills().subscribe({
       next:(data) => {
         this.additionalSkillList = data;
-        console.log("Additional list : ", this.additionalSkillList);
       },
       error: (err) => {
         console.error("Additional Skill Error: ", err);
+      }
+    });
+  }
+
+  loadInterest(): void{
+    this.interestService.getInterest().subscribe({
+      next:(data) => {
+        this.interstList = data;
+        console.log("Interest list : ", this.interstList);
+      },
+      error: (err) => {
+        console.error("Interest Skill Error: ", err);
       }
     });
   }

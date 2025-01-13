@@ -381,59 +381,6 @@
   </div>
 </section>
 
-<section class="section-2" id="interests" aria-label="interests">
-  <div class="container">
-    <div class="post-aside grid-list">
-      <div class="card aside-card">
-        <h3 class="headline headline-2 aside-title">
-          <span class="span">Interests</span>
-        </h3>
-        <ul class="experience-list">
-          <li>
-            <div class="experience-card">
-              <figure
-                class="card-banner img-holder"
-                style="--width: 64; --height: 64"
-              >
-                <img
-                  src="./assets/images/popular-post-1.jpg"
-                  width="64"
-                  height="64"
-                  loading="lazy"
-                  alt="Creating is a privilege but it’s also a gift"
-                  class="img-cover"
-                />
-              </figure>
-
-              <div class="card-content">
-                <div class="company-content">
-                  <h4
-                    class="headline headline-4 card-title"
-                    style="width: 100%; margin-bottom: 0px"
-                  >
-                    <a href="#" class="link hover-2"
-                      >ASA International Management Services Limited,
-                      Bangladesh</a
-                    >
-                  </h4>
-                </div>
-                <div class="card-grid-contianer">
-                  <p class="data-list">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Quam temporibus rerum laborum dolores saepe, aspernatur et
-                    adipisci repellendus ducimus ipsam? Perspiciatis aperiam
-                    autem error aliquid totam explicabo! Vel, accusamus sit.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section
   class="section-2"
   id="additional-skills-hobbies"
@@ -489,11 +436,63 @@
   </div>
 </section>
 
+<section class="section-2" id="interests" aria-label="interests">
+  <div class="container">
+    <div class="post-aside grid-list">
+      <div class="card aside-card">
+        <h3 class="headline headline-2 aside-title">
+          <span class="span">Interests</span>
+        </h3>
+        <ul class="experience-list" *ngFor="let interest of interstList">
+          <li>
+            <div class="experience-card">
+              <figure
+                class="card-banner img-holder"
+                style="--width: 64; --height: 64"
+              >
+                <img
+                  src="./assets/images/popular-post-1.jpg"
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                  alt="Creating is a privilege but it’s also a gift"
+                  class="img-cover"
+                />
+              </figure>
+
+              <div class="card-content">
+                <div class="company-content">
+                  <h4
+                    class="headline headline-4 card-title"
+                    style="width: 100%; margin-bottom: 0px"
+                  >
+                    <a href="#" class="link hover-2"
+                      >{{ interest.title }}</a
+                    >
+                  </h4>
+                </div>
+                <div class="card-grid-contianer">
+                  <ul *ngFor="let item of interest.keys">
+                    <li style="font-size: 12px">
+                      <b>-</b> {{ item.key }}
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section-2" id="languages" aria-label="languages">
   <div class="container">
     <div class="card aside-card">
       <h3 class="headline headline-2 aside-title">
-        <span class="span">Languages</span>
+        <span class="span">Languages Speak</span>
       </h3>
       <ul class="">
         <li>
@@ -502,14 +501,6 @@
               <a href="#" class="link hover-2">English</a>
             </h4>
             <p>Native or bilingual proficiency</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <h4 class="headline">
-              <a href="#" class="link hover-2">English</a>
-            </h4>
-            <p>Professional working proficiency</p>
           </div>
         </li>
       </ul>
