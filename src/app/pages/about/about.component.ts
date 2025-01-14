@@ -82,6 +82,7 @@ export class AboutComponent implements OnInit {
     this.additionalSkillService.getAdditionalSkills().subscribe({
       next:(data) => {
         this.additionalSkillList = data;
+        console.log("Additional skill list : ", this.additionalSkillList)
       },
       error: (err) => {
         console.error("Additional Skill Error: ", err);

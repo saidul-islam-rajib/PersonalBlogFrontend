@@ -8,7 +8,7 @@ import { AdditionalSkill } from '../interfaces/additional-skill';
   providedIn: 'root'
 })
 export class AdditionalSkillService {
-  private apiUrl = `${environment.apiUrl}/additional-skill/get-additional-skill`
+  private apiUrl = `${environment.apiUrl}/AdditionalSkill/get-additional-skill`
   constructor(private http: HttpClient) { }
 
   getAdditionalSkills(): Observable<AdditionalSkill[]>{
