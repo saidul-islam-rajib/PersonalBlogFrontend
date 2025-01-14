@@ -317,8 +317,8 @@
                   <a class="source-link" href="{{project.projectSrcLink}}">Open Source</a>
                 </div>
                 <div class="card-wrapper">
-                  <div class="card-tag">
-                    <a *ngFor="let item of project.projectSection" href="#" class="span hover-2"># {{ item.tagName }}</a>
+                  <div class="card-tag" *ngFor="let projectTagList of project.projectSection">
+                    <a *ngFor="let item of projectTagList.projectTags" class="span hover-2"># {{ item.projectTagName }}</a>
                   </div>
                 </div>
               </div>

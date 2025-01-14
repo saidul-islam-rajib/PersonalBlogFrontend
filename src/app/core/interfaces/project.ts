@@ -15,6 +15,10 @@ export interface ProjectSection{
   postSectionId: string;
   topicId: string;
   topicName: string;
+  projectTags: ProjectTagSection[];
+}
+
+export interface ProjectTagSection{
   tagId: string;
-  tagName: string;
+  projectTagName: string;
 }
