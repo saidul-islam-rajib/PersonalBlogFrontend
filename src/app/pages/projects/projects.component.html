@@ -4,7 +4,7 @@
 <section class="section project" id="recent" aria-labelledby="recent-label">
   <div class="container">
     <div class="">
-      <ul class="grid-list">
+      <ul class="grid-list" *ngFor="let project of projectList">
         <li>
           <div class="recent-post-card">
             <figure class="card-banner img-holder" style="--width: 250; --height: 200;">
@@ -14,24 +14,21 @@
 
             <div class="card-content">
               <h3 class="headline headline-4 card-title">
-                <a href="#" class="link hover-2">Helpful Tips for Working from Home as a Freelancer</a>
+                <a href="#" class="link hover-2">{{ project.projectTitle }}</a>
               </h3>
-              <p class="post-date">June 17, 2023</p>
+              <p class="post-date">{{ project.displayDate }}</p>
 
               <p class="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti alias voluptas nesciunt, praesentium
-                molestias in accusantium blanditiis consequuntur libero saepe sapiente et dolore iusto aliquam ipsam
-                dicta veritatis atque maxime laudantium, rerum pariatur, corporis dignissimos iste delectus! Dolor
-                dolore praesentium saepe deleniti non numquam incidunt iure? Provident qui natus dolores!
+                {{ project.projectSummary }}
               </p>
 
               <div class="wrapper">
                 <a href="home" class="card-badge">Source Link</a>
               </div>
 
-              <div class="card-wrapper">
-                <div class="card-tag">
-                  <a href="#" class="span hover-2"># Angular</a>
+              <div class="card-wrapper" >
+                <div class="card-tag" *ngFor="let projectSection of project.projectSection">
+                  <a *ngFor="let tag of projectSection.projectTags" class="span hover-2"># {{ tag.projectTagName }}</a>
                 </div>
               </div>
             </div>

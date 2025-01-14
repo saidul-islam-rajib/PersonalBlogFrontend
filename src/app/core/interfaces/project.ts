@@ -2,7 +2,6 @@ export interface Project {
   projectId: string;
   postId: string;
   projectTitle: string;
-  postTitle: string;
   projectSummary: string;
   projectSrcLink: string;
   projectImage: string;
