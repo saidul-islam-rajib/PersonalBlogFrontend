@@ -27,5 +27,5 @@ export interface SectionItem {
 
 export interface PostTopic {
   topicId: string;
-  name: string;
+  topicTitle: string;
 }
