@@ -28,7 +28,7 @@ export class PostService {
   }
 
   getRecentPosts(): Observable<Post[]>{
-    const data_url = `${this.postUrl}/Posts/get-all-posts`;
+    const data_url = `${this.postUrl}/get-all-posts`;
     let response = this.http.get<Post[]>(data_url);
     return response;
   }
