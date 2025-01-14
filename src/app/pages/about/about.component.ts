@@ -3,12 +3,14 @@ import { AdditionalSkill } from 'src/app/core/interfaces/additional-skill';
 import { Education } from 'src/app/core/interfaces/education';
 import { Experience } from 'src/app/core/interfaces/experience';
 import { Interest } from 'src/app/core/interfaces/interest';
+import { Project } from 'src/app/core/interfaces/project';
 import { Publication } from 'src/app/core/interfaces/publication';
 import { AdditionalSkillService } from 'src/app/core/services/additional-skill.service';
 import { CalculateDurationService } from 'src/app/core/services/common/calculate-duration.service';
 import { EducationService } from 'src/app/core/services/education.service';
 import { ExperienceService } from 'src/app/core/services/experience.service';
 import { InterestService } from 'src/app/core/services/interest.service';
+import { ProjectService } from 'src/app/core/services/project.service';
 import { PublicationService } from 'src/app/core/services/publication.service';
 
 @Component({
@@ -22,6 +24,7 @@ export class AboutComponent implements OnInit {
   publicationList: Publication[] = [];
   additionalSkillList: AdditionalSkill[] = [];
   interstList: Interest[] = [];
+  projectList: Project[] = [];
 
   constructor(
     private experienceService : ExperienceService,
@@ -29,7 +32,8 @@ export class AboutComponent implements OnInit {
     private educationService: EducationService,
     private publicationService: PublicationService,
     private additionalSkillService: AdditionalSkillService,
-    private interestService: InterestService
+    private interestService: InterestService,
+    private projectService: ProjectService
   ){}
 
   ngOnInit(): void{
@@ -38,6 +42,7 @@ export class AboutComponent implements OnInit {
     this.loadPublication();
     this.loadAdditionalSkill();
     this.loadInterest();
+    this.laodProject();
   }
 
   loadExperiences(): void {
@@ -92,6 +97,17 @@ export class AboutComponent implements OnInit {
       },
       error: (err) => {
         console.error("Interest Skill Error: ", err);
+      }
+    });
+  }
+  laodProject(): void{
+    this.projectService.getProject().subscribe({
+      next:(data) => {
+        this.projectList = data;
+        console.log("Project list : ", this.projectList);
+      },
+      error: (err) => {
+        console.error("Project Error: ", err);
       }
     });
   }

@@ -282,7 +282,7 @@
         <h3 class="headline headline-2 aside-title">
           <span class="span">Projects</span>
         </h3>
-        <ul class="grid-list">
+        <ul class="grid-list" *ngFor="let project of projectList" >
           <li>
             <div class="recent-post-card">
               <figure
@@ -305,71 +305,20 @@
                     style="width: 100%; margin-bottom: 0px"
                   >
                     <a href="#" class="link hover-2"
-                      >Angular CRUD Operation 1</a
+                      >{{ project.projectTitle }}</a
                     >
                   </h4>
-                  <p class="experience-month">June 17, 2023</p>
+                  <p class="experience-month">{{ project.displayDate | date: "MMMM dd, yyyy" }}</p>
                 </div>
                 <div class="card-grid-contianer">
                   <p class="data-list">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Aliquid, dicta. Maiores unde reiciendis fugiat! Consectetur
-                    sint, dolorum architecto eligendi quam exercitationem, dicta
-                    unde, rem atque amet inventore voluptatem? Ad delectus
-                    veritatis voluptate ducimus ipsam eligendi, laborum odit id
-                    praesentium quam!
+                    {{ project.projectSummary }}
                   </p>
-                  <a class="source-link" href="#">Source Code</a>
+                  <a class="source-link" href="{{project.projectSrcLink}}">Open Source</a>
                 </div>
                 <div class="card-wrapper">
                   <div class="card-tag">
-                    <a href="#" class="span hover-2"># Travel</a>
-                    <a href="#" class="span hover-2"># Lifestyle</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="recent-post-card">
-              <figure
-                class="card-banner img-holder"
-                style="--width: 350; --height: 200; background-color: c"
-              >
-                <img
-                  src="./assets/images/recent-post-1.jpg"
-                  width="200"
-                  height="100"
-                  loading="lazy"
-                  alt="Helpful Tips for Working from Home as a Freelancer"
-                  class="img-cover"
-                />
-              </figure>
-              <div class="card-content">
-                <div class="company-content">
-                  <h4
-                    class="headline headline-4 card-title"
-                    style="width: 100%; margin-bottom: 0px"
-                  >
-                    <a href="#" class="link hover-2">Angular CRUD Operation</a>
-                  </h4>
-                  <p class="experience-month">June 17, 2023</p>
-                </div>
-                <div class="card-grid-contianer">
-                  <p class="data-list">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Aliquid, dicta. Maiores unde reiciendis fugiat! Consectetur
-                    sint, dolorum architecto eligendi quam exercitationem, dicta
-                    unde, rem atque amet inventore voluptatem? Ad delectus
-                    veritatis voluptate ducimus ipsam eligendi, laborum odit id
-                    praesentium quam!
-                  </p>
-                  <a class="source-link" href="#">Source Code</a>
-                </div>
-                <div class="card-wrapper">
-                  <div class="card-tag">
-                    <a href="#" class="span hover-2"># Travel</a>
-                    <a href="#" class="span hover-2"># Lifestyle</a>
+                    <a *ngFor="let item of project.projectSection" href="#" class="span hover-2"># {{ item.tagName }}</a>
                   </div>
                 </div>
               </div>
