@@ -10,8 +10,8 @@ import { DashboardService } from 'src/app/core/services/dashboard.service';
 })
 export class DashboardComponent {
   paginatedData: PaginatedDashboard = {
-    pageIndex: 1,
-    pageSize: 10,
+    pageIndex: 0,
+    pageSize: 0,
     count: 0,
     data: []
   };
@@ -58,15 +58,12 @@ export class DashboardComponent {
     const middlePagesCount = 5;
     const pages: number[] = [];
 
-    if (currentPage >= 1) {
-      pages.push(1);
-    }
 
     if (currentPage > 3) {
       pages.push(-1);
     }
 
-    const startPage = Math.max(currentPage - Math.floor(middlePagesCount / 2), 2);
+    const startPage = Math.max(currentPage - Math.floor(middlePagesCount / 2), 1);
     const endPage = Math.min(currentPage + Math.floor(middlePagesCount / 2), totalPages - 1);
 
     for (let i = startPage; i <= endPage; i++) {
@@ -82,7 +79,4 @@ export class DashboardComponent {
     }
     return pages;
   }
-
-
-
 }
