@@ -58,6 +58,9 @@ export class DashboardComponent {
     const middlePagesCount = 5;
     const pages: number[] = [];
 
+    if (currentPage > 3) {
+      pages.push(1);
+    }
 
     if (currentPage > 3) {
       pages.push(-1);
