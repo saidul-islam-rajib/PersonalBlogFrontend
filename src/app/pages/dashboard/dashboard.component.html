@@ -84,17 +84,18 @@
           <i class="fa-solid fa-arrow-left"></i>
         </a>
 
-        <ng-container *ngFor="let page of totalPages">
+        <ng-container *ngFor="let page of getPaginationPages()">
           <a
+            *ngIf="page !== -1"
             href="javascript:void(0)"
             class="pagination-btn"
             (click)="goToPage(page)"
-            [class.active]="paginatedData?.pageIndex === page"
+            [class.active]="paginatedData.pageIndex === page"
           >
             {{ page }}
           </a>
+          <span *ngIf="page === -1" class="pagination-ellipsis">...</span>
         </ng-container>
-
         <a
           *ngIf="paginatedData.pageIndex * paginatedData.pageSize < paginatedData.count"
           href="javascript:void(0)"

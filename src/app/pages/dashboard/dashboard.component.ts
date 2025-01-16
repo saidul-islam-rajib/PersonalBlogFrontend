@@ -26,12 +26,9 @@ export class DashboardComponent {
   }
 
   goToPage(pageIndex: number): void {
-    console.log("Page number : ", pageIndex);
-
     this.dashboardService.getPaginatedPosts(pageIndex).subscribe({
       next: (response) => {
         this.paginatedData = response;
-        console.log("Response : ", this.paginatedData)
       },
       error: (err) => {
         console.error('Error:', err);
@@ -48,6 +45,39 @@ export class DashboardComponent {
       (_, i) => i + 1
     );
   }
+
+  getPaginationPages(): number[] {
+    const totalPages = Math.ceil(this.paginatedData.count / this.paginatedData.pageSize);
+    const currentPage = this.paginatedData.pageIndex;
+
+    const middlePagesCount = 5;
+    const pages: number[] = [];
+
+    if (currentPage >= 1) {
+      pages.push(1);
+    }
+
+    if (currentPage > 3) {
+      pages.push(-1);
+    }
+
+    const startPage = Math.max(currentPage - Math.floor(middlePagesCount / 2), 2);
+    const endPage = Math.min(currentPage + Math.floor(middlePagesCount / 2), totalPages - 1);
+
+    for (let i = startPage; i <= endPage; i++) {
+      pages.push(i);
+    }
+
+    if (currentPage < totalPages - 2) {
+      pages.push(-1);
+    }
+
+    if (currentPage <= totalPages) {
+      pages.push(totalPages);
+    }
+    return pages;
+  }
+
 
 
 }

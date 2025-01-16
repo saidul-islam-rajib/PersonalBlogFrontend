@@ -828,6 +828,12 @@ body.nav-active {
   color: white;
 }
 
+.pagination-btn.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
 .recent-post-card .card-title {
   margin-block: 1px 2px;
 }
