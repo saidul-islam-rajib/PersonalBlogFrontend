@@ -9,7 +9,12 @@ import { DashboardService } from 'src/app/core/services/dashboard.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-  paginatedData!: PaginatedDashboard;
+  paginatedData: PaginatedDashboard = {
+    pageIndex: 1,
+    pageSize: 10,
+    count: 0,
+    data: []
+  };
   pageIndex: number = 1;
 
   constructor(
