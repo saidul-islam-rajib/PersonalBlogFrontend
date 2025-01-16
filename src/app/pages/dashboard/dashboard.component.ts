@@ -10,6 +10,7 @@ import { DashboardService } from 'src/app/core/services/dashboard.service';
 })
 export class DashboardComponent {
   paginatedData!: PaginatedDashboard;
+  pageIndex: number = 1;
 
   constructor(
     private router: Router,
@@ -17,18 +18,7 @@ export class DashboardComponent {
   ) {}
 
   ngOnInit(): void {
-    this.loadPosts();
-  }
-
-  loadPosts(): void {
-    this.dashboardService.getPaginatedPosts().subscribe({
-      next: (response) => {
-        this.paginatedData = response;
-      },
-      error: (err) => {
-        console.error('Error:', err);
-      }
-    });
+    this.goToPage(this.pageIndex);
   }
 
   openPostTab(id: any){
@@ -36,14 +26,28 @@ export class DashboardComponent {
   }
 
   goToPage(pageIndex: number): void {
+    console.log("Page number : ", pageIndex);
+
     this.dashboardService.getPaginatedPosts(pageIndex).subscribe({
       next: (response) => {
         this.paginatedData = response;
+        console.log("Response : ", this.paginatedData)
       },
       error: (err) => {
         console.error('Error:', err);
       },
     });
   }
+
+  get totalPages(): number[] {
+    if (!this.paginatedData || !this.paginatedData.pageSize) {
+      return [];
+    }
+    return Array.from(
+      { length: Math.ceil(this.paginatedData.count / this.paginatedData.pageSize) },
+      (_, i) => i + 1
+    );
+  }
+
 
 }

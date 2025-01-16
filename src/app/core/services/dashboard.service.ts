@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { PaginatedDashboard } from '../interfaces/dashboard';
 import { environment } from 'src/environments/environment';
@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 export class DashboardService {
   constructor(private http: HttpClient) {}
 
-  getPaginatedPosts(pageIndex: number = 1, pageSize: number = 10): Observable<PaginatedDashboard> {
+  getPaginatedPosts(pageIndex: number, pageSize: number = 10): Observable<PaginatedDashboard> {
     const params = {
       pageIndex: pageIndex.toString(),
       pageSize: pageSize.toString(),

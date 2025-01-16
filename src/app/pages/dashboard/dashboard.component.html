@@ -72,18 +72,36 @@
           </div>
         </li>
       </ul>
-
+      
       <nav aria-label="pagination" class="pagination">
-        <a href="#" class="pagination-btn" aria-label="previous page">
+        <a
+          href="javascript:void(0)"
+          class="pagination-btn"
+          aria-label="previous page"
+          (click)="goToPage(paginatedData.pageIndex - 1)"
+          [class.disabled]="paginatedData.pageIndex === 1"
+        >
           <i class="fa-solid fa-arrow-left"></i>
         </a>
 
-        <a href="#" class="pagination-btn">1</a>
-        <a href="#" class="pagination-btn">2</a>
-        <a href="#" class="pagination-btn">3</a>
-        <a href="#" class="pagination-btn" aria-label="more page">...</a>
+        <ng-container *ngFor="let page of totalPages">
+          <a
+            href="javascript:void(0)"
+            class="pagination-btn"
+            (click)="goToPage(page)"
+            [class.active]="paginatedData?.pageIndex === page"
+          >
+            {{ page }}
+          </a>
+        </ng-container>
 
-        <a href="#" class="pagination-btn" aria-label="next page">
+        <a
+          href="javascript:void(0)"
+          class="pagination-btn"
+          aria-label="next page"
+          (click)="goToPage(paginatedData.pageIndex + 1)"
+          [class.disabled]="paginatedData.pageIndex === (paginatedData.count / paginatedData.pageSize)"
+        >
           <i class="fa-sharp fa-solid fa-arrow-right"></i>
         </a>
       </nav>
