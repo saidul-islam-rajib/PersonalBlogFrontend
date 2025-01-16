@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Dashboard } from 'src/app/core/interfaces/dashboard';
+import { PaginatedDashboard } from 'src/app/core/interfaces/dashboard';
 import { DashboardService } from 'src/app/core/services/dashboard.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { DashboardService } from 'src/app/core/services/dashboard.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-  data: Dashboard[] = [];
+  paginatedData!: PaginatedDashboard;
 
   constructor(
     private router: Router,
@@ -21,9 +21,9 @@ export class DashboardComponent {
   }
 
   loadPosts(): void {
-    this.dashboardService.getPosts().subscribe({
-      next: (posts) => {
-        this.data = posts;
+    this.dashboardService.getPaginatedPosts().subscribe({
+      next: (response) => {
+        this.paginatedData = response;
       },
       error: (err) => {
         console.error('Error:', err);
@@ -33,6 +33,17 @@ export class DashboardComponent {
 
   openPostTab(id: any){
     this.router.navigate(['home/posts/'+id])
+  }
+
+  goToPage(pageIndex: number): void {
+    this.dashboardService.getPaginatedPosts(pageIndex).subscribe({
+      next: (response) => {
+        this.paginatedData = response;
+      },
+      error: (err) => {
+        console.error('Error:', err);
+      },
+    });
   }
 
 }

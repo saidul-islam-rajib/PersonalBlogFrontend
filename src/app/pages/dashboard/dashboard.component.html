@@ -5,7 +5,7 @@
   <div class="container">
     <div class="post-main">
       <ul class="grid-list">
-        <li *ngFor="let post of data">
+        <li *ngFor="let post of paginatedData?.data">
           <div class="recent-post-card">
             <figure
               class="card-banner img-holder"
@@ -96,7 +96,7 @@
         </h3>
 
         <ul class="popular-list">
-          <li *ngFor="let post of data">
+          <li *ngFor="let post of paginatedData?.data">
             <div class="popular-card">
               <figure
                 class="card-banner img-holder"

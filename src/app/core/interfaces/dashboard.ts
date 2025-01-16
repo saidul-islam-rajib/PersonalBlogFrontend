@@ -1,3 +1,9 @@
+export interface PaginatedDashboard{
+  pageIndex: number;
+  pageSize: number;
+  count: number;
+  data : Dashboard[];
+}
 export interface Dashboard {
   postId: string;
   postTitle: string;
