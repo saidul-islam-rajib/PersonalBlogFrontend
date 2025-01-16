@@ -72,14 +72,14 @@
           </div>
         </li>
       </ul>
-      
+
       <nav aria-label="pagination" class="pagination">
         <a
+          *ngIf="paginatedData.pageIndex > 1"
           href="javascript:void(0)"
           class="pagination-btn"
           aria-label="previous page"
           (click)="goToPage(paginatedData.pageIndex - 1)"
-          [class.disabled]="paginatedData.pageIndex === 1"
         >
           <i class="fa-solid fa-arrow-left"></i>
         </a>
@@ -96,11 +96,11 @@
         </ng-container>
 
         <a
+          *ngIf="paginatedData.pageIndex * paginatedData.pageSize < paginatedData.count"
           href="javascript:void(0)"
           class="pagination-btn"
           aria-label="next page"
           (click)="goToPage(paginatedData.pageIndex + 1)"
-          [class.disabled]="paginatedData.pageIndex === (paginatedData.count / paginatedData.pageSize)"
         >
           <i class="fa-sharp fa-solid fa-arrow-right"></i>
         </a>
