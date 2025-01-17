@@ -40,9 +40,9 @@
               </figure>
 
               <div class="slider-content">
-                <span class="slider-title">{{ topic.skillName }}</span>
+                <span class="slider-title">{{ topic.topicName }}</span>
 
-                <p class="slider-subtitle">38 Articles</p>
+                <p class="slider-subtitle">{{ topic.tagInformation.length }}</p>
               </div>
 
             </a>
@@ -62,7 +62,7 @@
       <span class="span">Topics with Tag</span>
     </h1><hr>
     <div class="card topic-card">
-      <ul *ngFor="let data of topicWithTagList">
+      <ul *ngFor="let data of topicList">
         <li >
           <div class="custom-card-content">
             <div class="left-side">
