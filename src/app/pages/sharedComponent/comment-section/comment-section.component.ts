@@ -21,7 +21,7 @@ export class CommentSectionComponent {
 
   onSubmit(): void {
     if (this.inputControl.valid) {
-      const postCommentApiUrl = `${environment.apiUrl}/comment/posts/${this.postId}/create-comment`;
+      const postCommentApiUrl = `${environment.baseUrl}/comment/posts/${this.postId}/create-comment`;
 
       const payload = {
         Name: this.inputControl.get('commentorName')?.value,

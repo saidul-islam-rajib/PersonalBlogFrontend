@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProjectService {
-  private apiUrl = `${environment.apiUrl}/Project/get-projects`;
+  private apiUrl = `${environment.baseUrl}/Project/get-projects`;
   constructor(private http: HttpClient) { }
 
   getProject(): Observable<Project[]>{

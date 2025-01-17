@@ -8,7 +8,7 @@ import { User } from '../interfaces/user';
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = `${environment.apiUrl}/user`;
+  private apiUrl = `${environment.baseUrl}/user`;
   constructor(private http: HttpClient) { }
 
   getUserById(userId: string): Observable<User>{

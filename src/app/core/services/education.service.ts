@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class EducationService {
-  private apiUrl = `${environment.apiUrl}/education/get-educations`;
+  private apiUrl = `${environment.baseUrl}/education/get-educations`;
   constructor(private http: HttpClient) { }
 
   getEducations(): Observable<Education[]>{

@@ -8,7 +8,7 @@ import { Experience } from '../interfaces/experience';
   providedIn: 'root'
 })
 export class ExperienceService {
-  private apiUrl = `${environment.apiUrl}/experience/get-experiences`
+  private apiUrl = `${environment.baseUrl}/experience/get-experiences`
 
   constructor(private http: HttpClient) { }
 

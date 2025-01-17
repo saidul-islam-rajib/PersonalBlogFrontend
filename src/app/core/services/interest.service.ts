@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class InterestService {
-  private apiUrl = `${environment.apiUrl}/interest/get-interests`
+  private apiUrl = `${environment.baseUrl}/interest/get-interests`
 
   constructor(private http: HttpClient) { }
 

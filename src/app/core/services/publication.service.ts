@@ -8,7 +8,7 @@ import { Publication } from '../interfaces/publication';
   providedIn: 'root'
 })
 export class PublicationService {
-  private apiUrl = `${environment.apiUrl}/publication/get-publications`
+  private apiUrl = `${environment.baseUrl}/publication/get-publications`
   constructor(private http: HttpClient) { }
 
   getPublications(): Observable<Publication[]>{

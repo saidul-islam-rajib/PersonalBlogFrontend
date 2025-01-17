@@ -8,7 +8,7 @@ import { FeedbackInterface } from '../interfaces/feedback';
   providedIn: 'root',
 })
 export class CommentService {
-  private commentUrl = `${environment.apiUrl}/Comment/get-comments-by-post-id`;
+  private commentUrl = `${environment.baseUrl}/Comment/get-comments-by-post-id`;
 
   constructor(private http: HttpClient) {}
 

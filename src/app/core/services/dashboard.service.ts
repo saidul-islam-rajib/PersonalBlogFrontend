@@ -16,6 +16,6 @@ export class DashboardService {
       pageSize: pageSize.toString(),
     };
 
-    return this.http.get<PaginatedDashboard>(`${environment.apiUrl}/Posts/get-paginated-posts?`, { params });
+    return this.http.get<PaginatedDashboard>(`${environment.baseUrl}/Posts/get-paginated-posts?`, { params });
   }
 }
