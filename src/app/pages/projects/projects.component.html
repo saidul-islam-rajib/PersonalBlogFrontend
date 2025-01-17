@@ -7,9 +7,18 @@
       <ul class="grid-list" *ngFor="let project of projectList">
         <li>
           <div class="recent-post-card">
-            <figure class="card-banner img-holder" style="--width: 250; --height: 200;">
-              <img src="../../../assets/images/Rajib-profile.jpg" width="250" height="200" loading="lazy"
-                alt="Helpful Tips for Working from Home as a Freelancer" class="img-cover">
+            <figure
+              class="card-banner img-holder"
+              style="--width: 250; --height: 200"
+            >
+              <img
+                src="../../../assets/images/Rajib-profile.jpg"
+                width="250"
+                height="200"
+                loading="lazy"
+                alt="Helpful Tips for Working from Home as a Freelancer"
+                class="img-cover"
+              />
             </figure>
 
             <div class="card-content">
@@ -26,33 +35,23 @@
                 <a href="home" class="card-badge">Source Link</a>
               </div>
 
-              <div class="card-wrapper" >
-                <div class="card-tag" *ngFor="let projectSection of project.projectSection">
-                  <a *ngFor="let tag of projectSection.projectTags" class="span hover-2"># {{ tag.projectTagName }}</a>
+              <div class="card-wrapper">
+                <div
+                  class="card-tag"
+                  *ngFor="let projectSection of project.projectSection"
+                >
+                  <a
+                    *ngFor="let tag of projectSection.projectTags"
+                    class="span hover-2"
+                    ># {{ tag.projectTagName }}</a
+                  >
                 </div>
               </div>
             </div>
           </div>
         </li>
       </ul>
-
-      <nav aria-label="pagination" class="pagination">
-        <a href="#" class="pagination-btn" aria-label="previous page">
-          <ion-icon name="arrow-back" aria-hidden="true"></ion-icon>
-        </a>
-
-        <a href="#" class="pagination-btn">1</a>
-        <a href="#" class="pagination-btn">2</a>
-        <a href="#" class="pagination-btn">3</a>
-        <a href="#" class="pagination-btn" aria-label="more page">...</a>
-
-        <a href="#" class="pagination-btn" aria-label="next page">
-          <!-- <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon> -->
-        </a>
-
-      </nav>
     </div>
-
   </div>
 </section>
 
@@ -66,16 +65,30 @@
         <div class="feedback-list">
           <p class="feedback-list-title">Feedback</p>
           <small class="feedback-text">
-            Your valuable suggestions and feedback would greatly enhance my creativity. I would greatly appreciate any guidance you can offer.
+            Your valuable suggestions and feedback would greatly enhance my
+            creativity. I would greatly appreciate any guidance you can offer.
           </small>
 
           <div class="input-wrapper">
-            <input type="text" name="name" placeholder="Name" required class="input-field" autocomplete="off">
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              required
+              class="input-field"
+              autocomplete="off"
+            />
           </div>
 
           <div class="input-wrapper">
-            <input type="email" name="email_address" placeholder="Comments" required class="input-field"
-              autocomplete="off">
+            <input
+              type="email"
+              name="email_address"
+              placeholder="Comments"
+              required
+              class="input-field"
+              autocomplete="off"
+            />
           </div>
 
           <a href="#" class="btn btn-primary">
