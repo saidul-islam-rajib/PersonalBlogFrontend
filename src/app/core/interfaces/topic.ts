@@ -1,4 +1,4 @@
 export interface Topic {
   topicId: string;
-  topicName: string;
+  skillName: string;
 }
