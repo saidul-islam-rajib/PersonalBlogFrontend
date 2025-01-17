@@ -62,43 +62,18 @@
       <span class="span">Topics with Tag</span>
     </h1><hr>
     <div class="card topic-card">
-      <ul>
+      <ul *ngFor="let data of topicWithTagList">
         <li >
           <div class="custom-card-content">
             <div class="left-side">
-              <a href="">Rajib Ahmed</a>
+              <a href="">{{ data.topicName }}</a>
             </div>
             <div class="right-side" style="padding-top: 10px;">
-              <p>101</p>
+              <p>{{ data.tagInformation.length }}</p>
             </div>
           </div>
         </li>
       </ul>
-
-      <ul >
-        <li>
-          <div class="custom-card-content">
-            <div class="left-side">
-              <a href="">Sajib Ahmed</a>
-            </div>
-            <div class="right-side" style="padding-top: 10px;">
-              <p>102</p>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="custom-card-content">
-            <div class="left-side">
-              <a href="">Sajib Ahmed</a>
-            </div>
-            <div class="right-side" style="padding-top: 10px;">
-              <p>102</p>
-            </div>
-          </div>
-        </li>
-      </ul>
-
-
     </div>
 
   </div>

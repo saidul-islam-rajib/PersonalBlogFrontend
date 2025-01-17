@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { Topic } from 'src/app/core/interfaces/topic';
+import { TopicWithTag } from 'src/app/core/interfaces/topic-with-tag';
+import { TopicWithTagService } from 'src/app/core/services/topic-with-tag.service';
 import { TopicService } from 'src/app/core/services/topic.service';
 
 @Component({
@@ -10,10 +12,12 @@ import { TopicService } from 'src/app/core/services/topic.service';
 })
 export class TopicsComponent implements OnInit, OnDestroy, AfterViewInit {
   topicList: Topic[] = [];
+  topicWithTagList: TopicWithTag[] = [];
   private destroy$ = new Subject<void>();
 
   constructor(
-    private topicService: TopicService
+    private topicService: TopicService,
+    private topicWithTagService: TopicWithTagService
   ){}
 
   ngAfterViewInit(): void {
@@ -22,18 +26,27 @@ export class TopicsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngOnInit() {
     this.loadAllTopics();
+    this.loadTopicWithTag();
   }
 
   loadAllTopics(): void {
     this.topicService.getAllTopics().pipe(takeUntil(this.destroy$)).subscribe({
       next: (data) => {
         this.topicList = data;
-        console.log('Topic data list:', this.topicList);
-
-        // Reinitialize the slider after the topics are loaded
         setTimeout(() => {
           this.initializeSlider();
         });
+      },
+      error: () => {
+        alert('Failed to load topics. Please try again later.');
+      }
+    });
+  }
+
+  loadTopicWithTag(): void {
+    this.topicWithTagService.getTopicWithTag().pipe(takeUntil(this.destroy$)).subscribe({
+      next: (data) => {
+        this.topicWithTagList = data;
       },
       error: () => {
         alert('Failed to load topics. Please try again later.');
