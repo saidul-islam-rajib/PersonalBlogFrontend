@@ -63,12 +63,12 @@
     <div class="card feedback">
       <div class="feedback-top">
         <form (ngSubmit)="onSubmit(feedbackForm)" #feedbackForm="ngForm">
-
           <div class="feedback-list">
             <p class="feedback-list-title">Feedback</p>
             <small class="feedback-text">
               Your valuable suggestions and feedback would greatly enhance my
-              creativity. I would appreciate any guidance you can offer related to this application.
+              creativity. I would appreciate any guidance you can offer related
+              to this application.
             </small>
 
             <div class="input-wrapper">
@@ -95,11 +95,14 @@
               />
             </div>
 
-            <button type="submit" class="btn btn-primary" [disabled]="feedbackForm.invalid">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="feedbackForm.invalid"
+            >
               <span class="span">Send</span>
             </button>
           </div>
-
         </form>
       </div>
     </div>
