@@ -56,7 +56,7 @@ export class ProjectsComponent implements OnInit {
 
       this.projectService.sendFeedback(feedbackData).subscribe({
         next: (response) => {
-          console.log("Feedback sent successfully:", response);
+          alert("Your feedback has been submitted successfully! The admin will respond to you shortly.")
         },
         error: (err) => {
           console.error("Error sending feedback:", err);
