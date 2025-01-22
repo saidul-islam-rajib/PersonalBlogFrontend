@@ -25,7 +25,7 @@
               <h3 class="headline headline-4 card-title">
                 <a href="#" class="link hover-2">{{ project.projectTitle }}</a>
               </h3>
-              <p class="post-date">{{ project.displayDate }}</p>
+              <p class="post-date">{{ project.displayDate | date: "MMMM dd, yyyy" }}</p>
 
               <p class="card-text">
                 {{ project.projectSummary }}
