@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Project } from 'src/app/core/interfaces/project';
 import { ProjectService } from 'src/app/core/services/project.service';
 
@@ -7,15 +8,34 @@ import { ProjectService } from 'src/app/core/services/project.service';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit {
+  feedbackForm!: FormGroup;
   projectList: Project[] = [];
   constructor(
+    private fb: FormBuilder,
     private projectService : ProjectService
   ){
   }
 
   ngOnInit(): void{
     this.laodProject();
+    this.initializeForm();
+  }
+
+  private initializeForm(): void {
+    this.feedbackForm = this.fb.group({
+      comment: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]]
+    });
+
+    this.setFormData({
+      email: 'test@example.com',
+      comment: 'This is a pre-filled message.'
+    });
+  }
+
+  private setFormData(data: { email: string; comment: string }): void {
+    this.feedbackForm.patchValue(data);
   }
 
   laodProject(): void{
@@ -29,4 +49,22 @@ export class ProjectsComponent {
       }
     });
   }
+
+  onSubmit(feedbackForm: NgForm): void {
+    if (feedbackForm.valid) {
+      const feedbackData = feedbackForm.value;
+
+      this.projectService.sendFeedback(feedbackData).subscribe({
+        next: (response) => {
+          console.log("Feedback sent successfully:", response);
+        },
+        error: (err) => {
+          console.error("Error sending feedback:", err);
+        }
+      });
+
+      feedbackForm.reset();
+    }
+  }
+
 }

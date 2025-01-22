@@ -16,4 +16,9 @@ export class ProjectService {
     return response;
   }
 
+  sendFeedback(feedbackData: { name: string; comments: string }): Observable<any> {
+    var response = this.http.post(`${environment.baseUrl}/Feedback/create`, feedbackData);
+    return response;
+  }
+
 }
