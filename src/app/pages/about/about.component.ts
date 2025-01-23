@@ -136,6 +136,7 @@ export class AboutComponent implements OnInit {
   }
 
   calculateDuration(startDate: Date, endDate: Date, isCurrentEmployee: boolean): string {
-    return this.durationService.calculateWorkingDuration(startDate, endDate);
+    const effectiveEndDate = isCurrentEmployee ? new Date() : endDate;
+    return this.durationService.calculateWorkingDuration(startDate, effectiveEndDate);
   }
 }
