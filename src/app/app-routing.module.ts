@@ -8,13 +8,23 @@ import { RecentPostComponent } from './pages/recent-post/recent-post.component';
 import { PostComponent } from './pages/post/post.component';
 import { NotFoundComponent } from './common/not-found/not-found.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 
 const routes: Routes = [
   {
     path: 'admin/login',
     component: AdminLoginComponent,
     data:{
-      title: 'user/login',
+      title: 'admin/login',
+      reuse: true,
+      pagetype: 'view'
+    }
+  },
+  {
+    path: 'admin/dashboard',
+    component: AdminDashboardComponent,
+    data:{
+      title: 'admin/dashboard',
       reuse: true,
       pagetype: 'view'
     }
