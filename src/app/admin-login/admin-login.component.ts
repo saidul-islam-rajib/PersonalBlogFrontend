@@ -35,8 +35,23 @@ export class AdminLoginComponent {
 
   onLogin() {
     if (this.loginForm.valid) {
-      console.log('Login Form Submitted', this.loginForm.value);
-      // Add your login logic here
+      this.isLoading = true;
+      this.errorMessage = null;
+
+      const loginData = this.loginForm.value;
+
+      this.http.post(environment.loginUrl, loginData)
+      .subscribe({
+        next: () => {
+          this.isLoading = false;
+
+          this.router.navigate(['/home']);
+        },
+        error: (err) => {
+          this.isLoading = false;
+          this.errorMessage = err.error?.message || 'Login failed. Please try again.';
+        }
+      });
     }
   }
 
