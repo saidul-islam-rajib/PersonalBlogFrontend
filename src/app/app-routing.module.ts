@@ -7,19 +7,18 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RecentPostComponent } from './pages/recent-post/recent-post.component';
 import { PostComponent } from './pages/post/post.component';
 import { NotFoundComponent } from './common/not-found/not-found.component';
-
-// {
-//   path : 'lookup-type/edit/:id',
-//   component: LookupTypeAddEditComponent,
-//   canActivate:[AfterAuthGlobalGuard],
-//   data: {
-//     title: 'Edit Lookup Type',
-//     reuse:false,
-//     pageType : 'edit'
-//   }
-// },
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 const routes: Routes = [
+  {
+    path: 'user/login',
+    component: AdminLoginComponent,
+    data:{
+      title: 'user/login',
+      reuse: true,
+      pagetype: 'view'
+    }
+  },
   {
     path: 'home',
     component: DashboardComponent,
