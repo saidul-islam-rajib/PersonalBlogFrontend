@@ -7,7 +7,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RecentPostComponent } from './pages/recent-post/recent-post.component';
 import { PostComponent } from './pages/post/post.component';
 import { NotFoundComponent } from './common/not-found/not-found.component';
-import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 
 const routes: Routes = [
   {

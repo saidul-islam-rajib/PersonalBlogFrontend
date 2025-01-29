@@ -11,7 +11,7 @@ import { TopicsComponent } from './pages/topics/topics.component';
 import { PopularTagsComponent } from './pages/popular-tags/popular-tags.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { RecentPostComponent } from './pages/recent-post/recent-post.component';
 import { PostComponent } from './pages/post/post.component';
 import { FeedbackComponent } from './common/feedback/feedback.component';
