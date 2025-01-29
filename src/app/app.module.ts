@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './common/not-found/not-found.component';
 import { CommentSectionComponent } from './pages/sharedComponent/comment-section/comment-section.component';
 import { CeilPipe } from './core/pipes/ceil.pipe';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { CeilPipe } from './core/pipes/ceil.pipe';
     NotFoundComponent,
     CommentSectionComponent,
     CeilPipe,
+    AdminDashboardComponent,
 
   ],
   imports: [
