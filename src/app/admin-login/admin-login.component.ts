@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-admin-login',
@@ -10,8 +13,14 @@ export class AdminLoginComponent {
   loginForm: FormGroup;
   registerForm: FormGroup;
   isLoginMode = true;
+  isLoading = false;
+  errorMessage: string | null = null;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient,
+    private router : Router
+  ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
@@ -33,8 +42,23 @@ export class AdminLoginComponent {
 
   onRegister() {
     if (this.registerForm.valid) {
-      console.log('Register Form Submitted', this.registerForm.value);
-      // Add your registration logic here
+      this.isLoading = true;
+      this.errorMessage = null;
+
+      const registrationData = this.registerForm.value;
+
+      this.http.post(environment.registerUrl, registrationData)
+      .subscribe({
+        next: () => {
+          this.isLoading = false;
+
+          this.router.navigate(['/home'])
+        },
+        error: (error) => {
+          this.isLoading = false;
+          this.errorMessage = error.error?.message || 'Registration failed. Please try again';
+        }
+      });
     }
   }
 
